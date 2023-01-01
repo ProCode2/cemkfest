@@ -4,6 +4,9 @@ import { BiSearchAlt } from "react-icons/bi";
 import { BsPlusLg } from "react-icons/bs";
 import Button from "../components/Button";
 import Events from "../components/Events";
+import Robotics from "../components/Robotics";
+import Coding from "../components/Coding";
+import Spandan from "../components/Spandan";
 
 export default function Home() {
   const companyCommonStyles =
@@ -81,6 +84,7 @@ export default function Home() {
           <Events />
         </div>
       </section>
+      {/* <Spandan /> */}
     </>
   );
 }
