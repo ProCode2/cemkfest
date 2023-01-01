@@ -6,7 +6,7 @@ import Button from "./Button";
 
 const Gaming = () => {
   return (
-    <section className="w-full bg-gradient-3 flex justify-center items-center py-22">
+    <section className="w-full bg-transparent flex justify-center items-center py-22">
       <div className="flex-1">
         <Canvas
           camera={{ position: [100, 10, 50], fov: 70 }}
@@ -17,8 +17,8 @@ const Gaming = () => {
           <Suspense fallback={null}>
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="sunset">
-              <ambientLight intensity={1} position={[1, 5, 10]} />
-              <Model rotation={[0, 9, 0]} scale={[1, 1, 1]} />
+              <ambientLight intensity={1} position={[1, -5, 7]} />
+              <Model rotation={[0, 1, 0]} scale={[1, 1, 1]} />
             </Stage>
           </Suspense>
         </Canvas>

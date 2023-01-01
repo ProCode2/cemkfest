@@ -6,7 +6,7 @@ import Button from "./Button";
 
 const Spandan = () => {
   return (
-    <section className="w-full bg-gradient-3 flex justify-center items-center py-22">
+    <section className="w-full bg-transparent flex justify-center items-center py-22">
       <div className="flex-1">
         <Canvas
           camera={{ position: [100, 10, 50], fov: 70 }}

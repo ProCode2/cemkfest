@@ -4,7 +4,7 @@ import { MdOutlineFestival } from "react-icons/md";
 import { SiMinds } from "react-icons/si";
 import { IoLogoGameControllerB } from "react-icons/io";
 import { FaCodeBranch } from "react-icons/fa";
-import Image from "next/image";
+import Link from "next/link";
 
 const EventCard = ({ color, title, icon, subtitle }) => (
   <div className="flex flex-col justify-center items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl text-center">
@@ -34,48 +34,64 @@ const Events = () => (
       </div>
 
       <div className="flex-1 flex justify-center items-center pt-12 flex-wrap">
-        <EventCard
-          color="bg-[#2952E3]"
-          title="Robotics"
-          icon={<GiRobotLeg fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
-        <EventCard
-          color="bg-[#8945F8]"
-          title="Coding"
-          icon={<FaCodeBranch fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
-        <EventCard
-          color="bg-[#F84550]"
-          title="Gaming"
-          icon={<IoLogoGameControllerB fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
-        <EventCard
-          color="bg-[#F84550]"
-          title="Speak Up"
-          icon={<GiMicrophone fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
-        <EventCard
-          color="bg-[#F84550]"
-          title="Innovation"
-          icon={<SiMinds fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
-        <EventCard
-          color="bg-[#F84550]"
-          title="Brain Games"
-          icon={<GiBrain fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
-        <EventCard
-          color="bg-[#F84550]"
-          title="Entertainment"
-          icon={<MdOutlineFestival fontSize={50} className="text-white" />}
-          subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
-        />
+        <Link href="/events/robotics">
+          <EventCard
+            color="bg-[#2952E3]"
+            title="Robotics"
+            icon={<GiRobotLeg fontSize={50} className="text-white" />}
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
+        <Link href="/events/coding">
+          <EventCard
+            color="bg-[#8945F8]"
+            title="Coding"
+            icon={<FaCodeBranch fontSize={50} className="text-white" />}
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
+        <Link href="/events/gaming">
+          <EventCard
+            color="bg-[#F84550]"
+            title="Gaming"
+            icon={
+              <IoLogoGameControllerB fontSize={50} className="text-white" />
+            }
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
+        <Link href="/events/speakup">
+          <EventCard
+            color="bg-[#F84550]"
+            title="Speak Up"
+            icon={<GiMicrophone fontSize={50} className="text-white" />}
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
+        <Link href="/events/innovation">
+          <EventCard
+            color="bg-[#F84550]"
+            title="Innovation"
+            icon={<SiMinds fontSize={50} className="text-white" />}
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
+        <Link href="/events/braingames">
+          <EventCard
+            color="bg-[#F84550]"
+            title="Brain Games"
+            icon={<GiBrain fontSize={50} className="text-white" />}
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
+        <Link href="/events/entertainment">
+          <EventCard
+            color="bg-[#F84550]"
+            title="Entertainment"
+            icon={<MdOutlineFestival fontSize={50} className="text-white" />}
+            subtitle="Security is guranteed. We always maintain privacy and maintain the quality of our products"
+          />
+        </Link>
       </div>
     </div>
   </div>

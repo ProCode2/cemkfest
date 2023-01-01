@@ -6,7 +6,7 @@ import Button from "./Button";
 
 const Robotics = () => {
   return (
-    <section className="w-full bg-gradient-3 flex justify-center items-center py-22">
+    <section className="w-full bg-transparent flex justify-center items-center py-8">
       <div className="flex-1">
         <Canvas
           camera={{ position: [100, 10, 50], fov: 70 }}
@@ -17,7 +17,7 @@ const Robotics = () => {
           <Suspense fallback={null}>
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="sunset">
-              <Model rotation={[1, -1, 2]} scale={[1, 1, 1]} />
+              <Model rotation={[0, 0, 0]} scale={[1, 1, 1]} />
             </Stage>
           </Suspense>
         </Canvas>

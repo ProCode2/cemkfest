@@ -6,11 +6,11 @@ import Button from "./Button";
 
 const BrainGames = () => {
   return (
-    <section className="w-full bg-gradient-3 flex justify-center items-center py-22">
+    <section className="w-full bg-transparent flex justify-center items-center pt-32">
       <div className="flex-1">
         <Canvas
           camera={{ position: [100, 10, 50], fov: 70 }}
-          style={{ width: "70vw", height: "70vh" }}
+          style={{ width: "60vw", height: "50vh" }}
           flat
           linear
         >
@@ -18,7 +18,7 @@ const BrainGames = () => {
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="sunset">
               <ambientLight intensity={1} position={[1, 5, 10]} />
-              <Model rotation={[0, 9, 0]} scale={[1, 1, 1]} />
+              <Model rotation={[0, 1, 0]} scale={[0.5, 0.5, 0.5]} />
             </Stage>
           </Suspense>
         </Canvas>
