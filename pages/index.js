@@ -7,6 +7,11 @@ import Events from "../components/Events";
 import Robotics from "../components/Robotics";
 import Coding from "../components/Coding";
 import Spandan from "../components/Spandan";
+import Gaming from "../components/Gaming";
+import Innovations from "../components/Innovations";
+import BrainGames from "../components/BrainGames";
+import Entertainment from "../components/Entertainment";
+import Speakup from "../components/Speakup";
 
 export default function Home() {
   const companyCommonStyles =
@@ -84,7 +89,6 @@ export default function Home() {
           <Events />
         </div>
       </section>
-      {/* <Spandan /> */}
     </>
   );
 }
