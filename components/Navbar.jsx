@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Loader from "./Loader";
+import useScrollPosition from "../hooks/useScrollPosition";
 
 // import logo from "../public/vercel.svg";
 
@@ -12,10 +13,24 @@ const NavBarItem = ({ title, classprops }) => (
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [updateNavColor, setUpdateNavColor] = useState(false);
   const { data: session, status } = useSession();
+  const scrollPos = useScrollPosition();
+
+  useEffect(() => {
+    if (scrollPos > 100) {
+      setUpdateNavColor(true);
+    } else {
+      setUpdateNavColor(false);
+    }
+  }, [scrollPos]);
 
   return (
-    <nav className="w-full flex md:justify-center justify-between items-center p-4 nav-gradient absolute top-0 left-0">
+    <nav
+      className={`w-full flex md:justify-center justify-between items-center p-4 fixed top-0 left-0 z-10 ${
+        updateNavColor ? "nav-glassmorphism" : "bg-transparent"
+      }`}
+    >
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
         {/* <img src={logo} alt="logo" className="w-32 cursor-pointer" /> */}
         <h1 className="text-3xl font-koulen text-white font-bold">
@@ -23,7 +38,7 @@ const Navbar = () => {
         </h1>
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-        {["Events", "Blogs", "Workshops", "Team"].map((item, index) => (
+        {["Events", "Spandan", "Team"].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
         ))}
         {status == "loading" ? (
@@ -62,7 +77,7 @@ const Navbar = () => {
             <li className="text-xl w-full my-2">
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
-            {["Events", "Blogs", "Workshops", "Team"].map((item, index) => (
+            {["Events", "Spandan", "Team"].map((item, index) => (
               <NavBarItem
                 key={item + index}
                 title={item}

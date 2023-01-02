@@ -30,3 +30,13 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+detabase-debug.log
+
+firebase-debug.log
+
+firestore-debug.log
+
+ui-debug.log
+
+yarn.lock

@@ -1,17 +1,11 @@
 import Head from "next/head";
-import { BsFillAlarmFill } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { BsPlusLg } from "react-icons/bs";
 import Button from "../components/Button";
 import Events from "../components/Events";
-import Robotics from "../components/Robotics";
-import Coding from "../components/Coding";
-import Spandan from "../components/Spandan";
-import Gaming from "../components/Gaming";
-import Innovations from "../components/Innovations";
-import BrainGames from "../components/BrainGames";
-import Entertainment from "../components/Entertainment";
-import Speakup from "../components/Speakup";
+import CountDown from "../components/CountDown";
+import { useEffect, useState } from "react";
+import Cultutal from "../components/Cultural";
 
 export default function Home() {
   const companyCommonStyles =
@@ -26,14 +20,7 @@ export default function Home() {
       </Head>
       <section className="bg-gradient-1 w-screen h-full py-28 flex items-center justify-start flex-col">
         <div className="flex justify-center items-center m-4 flex-col text-center">
-          <div className="text-sm md:text-base blue-glassmorphism text-white font-mono flex justify-center items-center p-2 rounded-lg mb-3">
-            <BsFillAlarmFill fontSize={24} className="mr-2" />
-            <span>12</span>
-            <span>:</span>
-            <span>43</span>
-            <span>:</span>
-            <span>56</span>
-          </div>
+          <CountDown />
           <div>
             <h1 className="text-gradient font-bold text-3xl md:text-6xl tracking-wide">
               Dive Into the Euphoria <br /> of all things Tech!
@@ -89,6 +76,7 @@ export default function Home() {
           <Events />
         </div>
       </section>
+      <Cultutal />
     </>
   );
 }
