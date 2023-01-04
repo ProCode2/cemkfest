@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { BiSearchAlt } from "react-icons/bi";
 import { BsPlusLg } from "react-icons/bs";
-import Button from "../components/Button";
 import Events from "../components/Events";
 import CountDown from "../components/CountDown";
 import { useEffect, useState } from "react";
 import Cultutal from "../components/Cultural";
+import Team from "../components/Team";
+import SearchEvent from "../components/SearchEvent";
 
 export default function Home() {
   const companyCommonStyles =
@@ -31,23 +31,12 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full flex justify-center items-center mt-4 mb-20">
-          <div className="p-3 blue-glassmorphism rounded-full flex justify-center items-center w-full max-w-2xl mx-2 mt-4">
-            <div className="flex justify-center items-center w-full">
-              <BiSearchAlt fontSize={24} className="" />
-              <input
-                type="text"
-                placeholder="search for an event"
-                className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm md:text-base"
-              />
-            </div>
-
-            <Button text="find" />
-          </div>
+          <SearchEvent />
         </div>
       </section>
       <section className="bg-gradient-2 w-screen relative min-h-screen">
-        <div className="static md:absolute md:-top-24 md:left-0 md:right-0 flex justify-center items-center flex-wrap p-4">
-          <div className="white-glassmorphism rounded-lg py-6 px-16 text-center m-4 max-w-max">
+        <div className="static md:absolute md:-top-24 md:left-0 md:right-0 flex justify-center items-center flex-wrap p-4 z-0">
+          <div className="white-glassmorphism rounded-lg py-6 px-16 text-center m-4 max-w-max z-0">
             <span className="inline-flex items-center justify-center text-6xl">
               30 <BsPlusLg className="w-6 h-6 ml-2" />
             </span>
@@ -77,6 +66,7 @@ export default function Home() {
         </div>
       </section>
       <Cultutal />
+      <Team />
     </>
   );
 }
