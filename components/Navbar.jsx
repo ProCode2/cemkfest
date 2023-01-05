@@ -7,11 +7,26 @@ import useScrollPosition from "../hooks/useScrollPosition";
 
 // import logo from "../public/vercel.svg";
 
-const NavBarItem = ({ title, classprops }) => (
-  <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
-);
+const NavBarItem = ({ title, classprops, itemRef }) => {
+  console.log(itemRef);
+  return (
+    <li
+      onClick={() => {
+        itemRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+          inline: "nearest",
+        });
+      }}
+      className={`mx-4 cursor-pointer ${classprops}`}
+    >
+      {title}
+    </li>
+  );
+};
 
-const Navbar = () => {
+const Navbar = ({ teamRef, spandanRef, eventRef }) => {
+  // console.log(teamRef);
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [updateNavColor, setUpdateNavColor] = useState(false);
   const { data: session, status } = useSession();
@@ -27,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full flex md:justify-center justify-between items-center p-4 fixed top-0 left-0 z-10 ${
+      className={`w-full flex md:justify-center justify-between items-center p-4 fixed top-0 left-0 z-30 ${
         updateNavColor ? "nav-glassmorphism" : "bg-transparent"
       }`}
     >
@@ -38,13 +53,26 @@ const Navbar = () => {
         </h1>
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-        {["Events", "Spandan", "Team"].map((item, index) => (
-          <NavBarItem key={item + index} title={item} />
+        {[
+          { name: "Events", ref: eventRef },
+          { name: "Spandan", ref: spandanRef },
+          { name: "Team", ref: teamRef },
+        ].map((item, index) => (
+          <NavBarItem
+            key={item.name + index}
+            title={item.name}
+            itemRef={item.ref}
+          />
         ))}
         {status == "loading" ? (
           <Loader />
         ) : status == "authenticated" ? (
-          <span className="text-sm">Hi, {session.user.name}!</span>
+          <li
+            onClick={() => signOut()}
+            className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
+          >
+            Logout
+          </li>
         ) : (
           <li
             onClick={() => signIn("google")}
@@ -63,13 +91,6 @@ const Navbar = () => {
           />
         )}
         {toggleMenu && (
-          <AiOutlineClose
-            fontSize={28}
-            className="text-white md:hidden cursor-pointer"
-            onClick={() => setToggleMenu(false)}
-          />
-        )}
-        {toggleMenu && (
           <ul
             className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none
             flex flex-col justify-start items-end rounded-md blue-glassmorphism text-white animate-slide-in"
@@ -77,11 +98,16 @@ const Navbar = () => {
             <li className="text-xl w-full my-2">
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
-            {["Events", "Spandan", "Team"].map((item, index) => (
+            {[
+              { name: "Events", ref: eventRef },
+              { name: "Spandan", ref: spandanRef },
+              { name: "Team", ref: teamRef },
+            ].map((item, index) => (
               <NavBarItem
-                key={item + index}
-                title={item}
+                key={item.name + index}
+                title={item.name}
                 classprops="my-2 text-lg"
+                itemRef={item.ref}
               />
             ))}
             {status == "loading" ? (

@@ -1,9 +1,12 @@
 import React from "react";
 import Button from "./Button";
 
-const Cultutal = () => {
+const Cultutal = ({ spandanRef }) => {
   return (
-    <section className="w-full bg-gradient-3 flex justify-center items-center py-20">
+    <section
+      ref={spandanRef}
+      className="w-full bg-gradient-3 flex justify-center items-center py-20"
+    >
       <div className="flex-1 flex justify-end items-center mr-20">
         <div className="bg-slate-300 font-bold p-10 rounded-full max-w-max text-3xl">
           LOGO

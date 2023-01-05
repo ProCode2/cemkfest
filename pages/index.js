@@ -7,7 +7,8 @@ import Cultutal from "../components/Cultural";
 import Team from "../components/Team";
 import SearchEvent from "../components/SearchEvent";
 
-export default function Home() {
+export default function Home({ teamRef, spandanRef, eventRef }) {
+  // console.log(teamRef.current.value);
   const companyCommonStyles =
     "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
   return (
@@ -62,11 +63,11 @@ export default function Home() {
           </div>
         </div>
         <div className="pt-20">
-          <Events />
+          <Events eventRef={eventRef} />
         </div>
       </section>
-      <Cultutal />
-      <Team />
+      <Cultutal spandanRef={spandanRef} />
+      <Team teamRef={teamRef} />
     </>
   );
 }

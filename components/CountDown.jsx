@@ -5,7 +5,7 @@ import ClientConfetti from "./ClientConfetti";
 
 const CountDown = () => {
   const [initialRenderComplete, setInitialRenderComplete] = useState(false); // to avoid react hydration error
-  const [days, hours, minutes, seconds] = useCountdown("Jan 5 2023 01:40:00");
+  const [days, hours, minutes, seconds] = useCountdown("Jan 6 2023 10:00:00");
   const [renderConfetti, setRenderConfetti] = useState(false);
 
   useEffect(() => {
