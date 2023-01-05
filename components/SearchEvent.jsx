@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import Button from "../components/Button";
-import { useOnClickOutside } from "../hooks/useOnClickOutSide";
+import { useOnClickOutside } from "../hooks/useOnClickOutside";
 
 const SearchEvent = () => {
   const [showResults, setShowResults] = useState(false);
