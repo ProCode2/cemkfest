@@ -1,11 +1,12 @@
 import Head from "next/head";
 import { BsPlusLg } from "react-icons/bs";
 import Events from "../components/Events";
-import CountDown from "../components/CountDown";
+// import CountDown from "../components/CountDown";
 import { useEffect, useState } from "react";
 import Cultutal from "../components/Cultural";
 import Team from "../components/Team";
 import SearchEvent from "../components/SearchEvent";
+import ArcReactor from "../components/ArcReactor";
 
 export default function Home({ teamRef, spandanRef, eventRef }) {
   // console.log(teamRef.current.value);
@@ -19,16 +20,16 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="bg-gradient-1 w-screen h-full py-28 flex items-center justify-start flex-col">
-        <div className="flex justify-center items-center m-4 flex-col text-center">
-          <CountDown />
-          <div>
-            <h1 className="text-gradient font-bold text-3xl md:text-6xl tracking-wide">
-              Dive Into the Euphoria <br /> of all things Tech!
+      <section className="bg-gradient-1 w-full h-full py-28 flex items-center justify-start flex-col">
+        <div className="flex justify-center items-center m-4 flex-col text-center py-32 relative">
+          {/* <CountDown /> */}
+          <div className="">
+            <h1 className="text-gradient font-bold text-3xl md:text-6xl tracking-wide uppercase relative z-10">
+              Resonance XII
             </h1>
-            <p className="text-base md:text-lg mt-2">
-              at the heart of CEMK, Kolaghat
-            </p>
+          </div>
+          <div className="absolute">
+            <ArcReactor classNames="" />
           </div>
         </div>
         <div className="w-full flex justify-center items-center mt-4 mb-20">
