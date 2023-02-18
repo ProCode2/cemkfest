@@ -1,15 +1,27 @@
 import React, { useRef, useState } from "react";
+import { useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import Button from "../components/Button";
+import { getAllEvents, search } from "../feUtils/functions";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import EventItem from "./EventItem";
 
 const SearchEvent = () => {
   const [showResults, setShowResults] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [events, setEvents] = useState([]);
   const resultDiv = useRef();
+
+  useEffect(() => {
+    getAllEvents()
+      .then((es) => setEvents(es))
+      .catch((e) => console.log(e));
+  }, []);
+
   useOnClickOutside(resultDiv, () => setShowResults(false));
+
   const getSearchResults = () => {
-    return [];
+    return search(events, searchText);
   };
   return (
     <div className="relative w-full max-w-2xl mx-2 mt-4">
@@ -40,14 +52,13 @@ const SearchEvent = () => {
             </div>
           ) : (
             <div>
-              <div className="py-3 pl-2 md:pl-4">
-                <h3 className="text-xl text-slate-400 font-bold">
-                  Robo War 15Kg
-                </h3>
-                <p className="text-xs text-slate-600">
-                  The fight of wars here we ...
-                </p>
-              </div>
+              {getSearchResults(searchText).map((e) => (
+                <EventItem
+                  eventName={e.name}
+                  description={e.description}
+                  link={`/events/${e.id}`}
+                />
+              ))}
             </div>
           )}
         </div>

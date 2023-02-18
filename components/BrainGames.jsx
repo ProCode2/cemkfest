@@ -9,8 +9,8 @@ const BrainGames = () => {
     <section className="w-full bg-transparent flex justify-center items-center pt-32">
       <div className="flex-1">
         <Canvas
+          className="w-full h-full"
           camera={{ position: [100, 10, 50], fov: 70 }}
-          style={{ width: "60vw", height: "50vh" }}
           flat
           linear
         >
