@@ -15,14 +15,12 @@ const EventCard = ({ color, title, icon, subtitle }) => {
   const eventsRef = useRef();
   const [showEvents, setShowEvents] = useState(false);
   let eventsVisible;
-  if (typeof window !== "undefined") {
-    eventsVisible = useOnScreen(eventsRef);
-  }
+  eventsVisible = useOnScreen(eventsRef);
 
   useEffect(() => {
     if (eventsVisible) setShowEvents(true);
     else setShowEvents(false);
-  }, [scrollPosition]);
+  }, [scrollPosition, eventsVisible]);
   return (
     <motion.div
       ref={eventsRef}

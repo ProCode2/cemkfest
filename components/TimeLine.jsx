@@ -11,10 +11,8 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
   const [showPoint, setShowPoint] = useState(false);
   let barVisible;
   let pointVisible;
-  if (typeof window !== "undefined") {
-    barVisible = useOnScreen(barRef);
-    pointVisible = useOnScreen(pointRef);
-  }
+  barVisible = useOnScreen(barRef);
+  pointVisible = useOnScreen(pointRef);
 
   useEffect(() => {
     if (barVisible) setShowBar(true);
@@ -22,7 +20,7 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
 
     if (pointVisible) setShowPoint(true);
     else setShowPoint(false);
-  }, [scrollPosition]);
+  }, [scrollPosition, barVisible, pointVisible]);
   return (
     <>
       <motion.div

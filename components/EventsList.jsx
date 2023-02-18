@@ -37,6 +37,7 @@ const EventsList = ({ eventUrlPrefix }) => {
         <div className="flex flex-col justify-center items-center space-y-4">
           {search(dayOneEvents, searchText).map((e) => (
             <EventItem
+              key={e.id}
               eventName={e.name}
               link={`${eventUrlPrefix}/${e.id}`}
               description={e.description}
@@ -49,6 +50,7 @@ const EventsList = ({ eventUrlPrefix }) => {
         <div className="flex flex-col justify-center items-center space-y-4">
           {search(dayTwoEvents, searchText).map((e) => (
             <EventItem
+              key={e.id}
               eventName={e.name}
               link={`/events/${e.id}`}
               description={e.description}

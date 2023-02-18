@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import EventItem from "../components/EventItem";
 import { getProfileData, unregisterFromEvent } from "../feUtils/functions";
@@ -21,7 +22,7 @@ const ProfilePage = () => {
       </Head>
       <section className="bg-gradient-1 w-full h-full py-28 flex items-center justify-start flex-col min-h-screen">
         <div className="white-glassmorphism flex justify-start items-center py-3 px-4 w-11/12 m-4 max-w-5xl">
-          <img
+          <Image
             className="w-28 rounded-full shadow-md"
             src={profile?.user?.image}
             alt={profile?.user?.name}
@@ -37,7 +38,10 @@ const ProfilePage = () => {
           </h4>
           <div className="w-full max-w-4xl blue-glassmorphism p-4 md:p-8">
             {profile?.registeredEvents?.map((event) => (
-              <div className="flex justify-between items-center">
+              <div
+                key={event?.id}
+                className="flex justify-between items-center"
+              >
                 <EventItem
                   link={`/events/${event?.id}`}
                   eventName={event?.name}

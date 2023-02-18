@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 
 const useOnScreen = (ref) => {
+  if (typeof IntersectionObserver === "undefined") {
+    return false;
+  }
   const [isIntersecting, setIntersecting] = useState(false);
   const observer = useMemo(
     () =>

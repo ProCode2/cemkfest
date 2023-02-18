@@ -54,6 +54,7 @@ const SearchEvent = () => {
             <div>
               {getSearchResults(searchText).map((e) => (
                 <EventItem
+                  key={e.id}
                   eventName={e.name}
                   description={e.description}
                   link={`/events/${e.id}`}

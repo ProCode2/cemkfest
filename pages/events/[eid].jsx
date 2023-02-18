@@ -88,7 +88,7 @@ const SingleEventPage = () => {
             <div className="text-sm font-mono  text-slate-600 mt-3">
               <ul>
                 {Object.values(event?.rules || {}).map((rule) => (
-                  <li>{rule}</li>
+                  <li key={rule}>{rule}</li>
                 ))}
               </ul>
             </div>
@@ -100,7 +100,7 @@ const SingleEventPage = () => {
             <div className="text-sm font-mono  text-slate-600 mt-3">
               <ul>
                 {Object.values(event?.coordinators || {}).map((co) => (
-                  <li>
+                  <li key={co?.phone}>
                     {co?.name}, {co?.phone}
                   </li>
                 ))}

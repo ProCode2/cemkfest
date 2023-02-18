@@ -10,6 +10,7 @@ import {
 } from "../../../feUtils/functions";
 import { MdDeleteForever } from "react-icons/md";
 import { uuidv4 } from "@firebase/util";
+import Image from "next/image";
 
 const EditEventPage = () => {
   const router = useRouter();
@@ -48,7 +49,7 @@ const EditEventPage = () => {
         <div className="w-full flex flex-col justify-center items-center h-full">
           <div className="w-full m-4 rounded-md shadow-md shadow-slate-400 h-48 overflow-hidden relative md:max-w-5xl">
             <div className="w-full h-full object-cover absolute top-0 left-0 event-bg-overlay">
-              <img
+              <Image
                 src="/images/astro.svg"
                 alt="astro"
                 className="absolute w-32 move-in-style"
