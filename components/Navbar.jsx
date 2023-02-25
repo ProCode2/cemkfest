@@ -8,20 +8,15 @@ import Link from "next/link";
 
 // import logo from "../public/vercel.svg";
 
-const NavBarItem = ({ title, classprops, itemRef }) => {
+const NavBarItem = ({ title, classprops, link }) => {
   return (
-    <li
-      onClick={() => {
-        itemRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-          inline: "nearest",
-        });
-      }}
-      className={`mx-4 cursor-pointer ${classprops}`}
-    >
-      {title}
-    </li>
+    <Link href={link}>
+      <li
+        className={`mx-4 cursor-pointer ${classprops}`}
+      >
+        {title}
+      </li>
+    </Link>
   );
 };
 
@@ -56,14 +51,14 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
         {[
-          { name: "Events", ref: eventRef },
-          { name: "Spandan", ref: spandanRef },
-          { name: "Team", ref: teamRef },
+          { name: "Events", link: "/events" },
+          { name: "Spandan", link: "/spandan" },
+          { name: "Team", link: "/team" },
         ].map((item, index) => (
           <NavBarItem
             key={item.name + index}
             title={item.name}
-            itemRef={item.ref}
+            link={item.link}
           />
         ))}
         {status == "loading" ? (
@@ -101,15 +96,15 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
             {[
-              { name: "Events", ref: eventRef },
-              { name: "Spandan", ref: spandanRef },
-              { name: "Team", ref: teamRef },
+              { name: "Events", link: "/events" },
+              { name: "Spandan", link: "/spandan" },
+              { name: "Team", link: "/team" },
             ].map((item, index) => (
               <NavBarItem
                 key={item.name + index}
                 title={item.name}
                 classprops="my-2 text-lg"
-                itemRef={item.ref}
+                link={item.link}
               />
             ))}
             {status == "loading" ? (

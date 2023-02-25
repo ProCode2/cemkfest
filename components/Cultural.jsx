@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import Button from "./Button";
 
@@ -20,7 +21,9 @@ const Cultutal = ({ spandanRef }) => {
           <p className="text-base md:text-lg mt-2 mb-3">
             Devolve into the cultural fest of CEMK.
           </p>
-          <Button text="Know More" />
+          <Link href={{ pathname: '/events', query: { category: 'cultural' } }}>
+            <Button text="See Events" />
+          </Link>
         </div>
       </div>
     </section>

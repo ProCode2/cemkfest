@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Model } from "./Bulb";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Button from "./Button";
+import Link from "next/link";
 
 const Speakup = () => {
   return (
@@ -31,7 +32,9 @@ const Speakup = () => {
           <p className="text-base md:text-lg mt-2 mb-3">
             Be the Speakup ninja, show your skills!
           </p>
-          <Button text="Know More" />
+          <Link href={{ pathname: '/events', query: { category: 'speakup' } }}>
+            <Button text="See Events" />
+          </Link>
         </div>
       </div>
     </section>

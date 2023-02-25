@@ -1,18 +1,24 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { getAllEvents, search } from "../feUtils/functions";
 
+
 import EventItem from "./EventItem";
-import SearchEvent from "./SearchEvent";
 
 const EventsList = ({ eventUrlPrefix }) => {
   const [tab, setTab] = useState("1");
   const [dayOneEvents, setDayOneEvents] = useState([]);
   const [dayTwoEvents, setDayTwoEvents] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  
+  const router = useRouter();
+  const param = router.query;
+  
+  const [searchText, setSearchText] = useState(param?.category || "");
 
   useEffect(() => {
+    if (param != {}) setSearchText(param?.category || "")
     getAllEvents()
       .then((es) => {
         const one = [],
@@ -21,7 +27,6 @@ const EventsList = ({ eventUrlPrefix }) => {
         es.forEach((e) => {
           const dt = new Date(e.time);
           const day = dt.getDate();
-          console.log(day);
           if (day == 4) one.push(e);
           else if (day == 5) two.push(e);
         });
@@ -29,7 +34,7 @@ const EventsList = ({ eventUrlPrefix }) => {
         setDayTwoEvents(two);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [param]);
 
   const getEventsTable = (tabValue) => {
     if (tabValue == "1") {
@@ -90,6 +95,7 @@ const EventsList = ({ eventUrlPrefix }) => {
         <div className="flex justify-center items-center w-56 white-glassmorphism px-2">
           <BiSearchAlt fontSize={24} className="" />
           <input
+            value={searchText}
             onChange={(e) => setSearchText(e.target.value.toLocaleLowerCase())}
             type="text"
             placeholder="search for an event"

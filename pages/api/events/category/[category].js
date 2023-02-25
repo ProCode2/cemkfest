@@ -1,6 +1,6 @@
 import { getEventsByCategory } from "../../../../models/events";
 
-export default handler = async (req, res) => {
+const handler = async (req, res) => {
   const { category } = req.query;
   if (
     ![
@@ -22,3 +22,5 @@ export default handler = async (req, res) => {
     res.status(400).end();
   }
 };
+
+export default handler;

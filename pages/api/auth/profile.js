@@ -2,7 +2,7 @@ import { unstable_getServerSession } from "next-auth";
 import { getProfileData } from "../../../models/user";
 import { authOptions } from "./[...nextauth]";
 
-export default handler = async (req, res) => {
+const handler = async (req, res) => {
   const session = await unstable_getServerSession(req, res, authOptions);
 
   if (!session?.user?.id) return res.status(403).end();
@@ -11,3 +11,5 @@ export default handler = async (req, res) => {
   console.log(profileData);
   return res.json(profileData);
 };
+
+export default handler;

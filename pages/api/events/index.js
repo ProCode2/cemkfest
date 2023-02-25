@@ -3,7 +3,7 @@ import { checkAdminAccess } from "../../../utils/auth";
 import { unstable_getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 
-export default handler = async (req, res) => {
+const handler = async (req, res) => {
   try {
     if (req.method == "GET") {
       const session = await unstable_getServerSession(req, res, authOptions);
@@ -44,3 +44,5 @@ export default handler = async (req, res) => {
     res.status(400).end();
   }
 };
+
+export default handler;

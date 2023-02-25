@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Model } from "./Camera";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Button from "./Button";
+import Link from "next/link";
 
 const Entertainment = () => {
   return (
@@ -31,7 +32,9 @@ const Entertainment = () => {
           <p className="text-base md:text-lg mt-2 mb-3">
             Be the Entertainment ninja, show your skills!
           </p>
-          <Button text="Know More" />
+          <Link href={{ pathname: '/events', query: { category: 'entertainment' } }}>
+            <Button text="See Events" />
+          </Link>
         </div>
       </div>
     </section>

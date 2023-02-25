@@ -6,7 +6,7 @@ import {
 import { checkUserLoggedIn } from "../../../../utils/auth";
 import { authOptions } from "../../auth/[...nextauth]";
 
-export default handler = async (req, res) => {
+const handler = async (req, res) => {
   const { eid } = req.query;
 
   const session = await unstable_getServerSession(req, res, authOptions);
@@ -30,3 +30,5 @@ export default handler = async (req, res) => {
     return res.status(400).end();
   }
 };
+
+export default handler;
