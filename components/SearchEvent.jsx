@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import Button from "../components/Button";
 import { getAllEvents, search } from "../feUtils/functions";
-import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import { useOnClickOutside } from "../hooks/useOnClickOutSide";
 import EventItem from "./EventItem";
 
 const SearchEvent = () => {
