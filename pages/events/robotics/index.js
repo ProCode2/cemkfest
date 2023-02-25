@@ -14,9 +14,6 @@ const RoboticsPage = () => {
       </Head>
       <section className="bg-gradient-1 w-screen h-full flex flex-col justify-center items-center">
         <Robotics />
-        <div className="w-full flex justify-center items-center">
-          <EventsList />
-        </div>
       </section>
     </>
   );
