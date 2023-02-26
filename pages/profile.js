@@ -3,14 +3,22 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import EventItem from "../components/EventItem";
 import { getProfileData, unregisterFromEvent } from "../feUtils/functions";
+import {useSession} from "next-auth/react"
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState({});
 
+  const { data:session, status } = useSession()
+
   useEffect(() => {
-    getProfileData()
+    if (status === "authenticated") {
+      getProfileData()
       .then((p) => setProfile(p))
       .catch((e) => console.log(e));
+    } else {
+      window.location.href = "/"
+    }
+    
   }, []);
   return (
     <>

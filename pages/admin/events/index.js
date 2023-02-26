@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import React from "react";
 import { useState } from "react";
@@ -7,6 +8,10 @@ import { checkAdminAccess, getAllEvents } from "../../../feUtils/functions";
 
 const EventsAdminPage = () => {
   const [events, setEvents] = useState([]);
+
+  const { data:session, status } = useSession()
+
+
   useEffect(() => {
     try {
       checkAdminAccess();

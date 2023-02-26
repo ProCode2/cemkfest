@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -7,6 +8,8 @@ import { useState } from "react";
 import { getEvent, registerForEvent } from "../../feUtils/functions";
 
 const SingleEventPage = () => {
+
+  const { data: session, status } = useSession();
   const router = useRouter();
   const [event, setEvent] = useState({});
   const { eid } = router.query;
@@ -32,9 +35,11 @@ const SingleEventPage = () => {
           <div className="w-full m-4 rounded-md shadow-md shadow-slate-400 h-48 overflow-hidden relative md:max-w-5xl">
             <div className="w-full h-full object-cover absolute top-0 left-0 event-bg-overlay">
               <Image
+                width={100}
+                height={100}
                 src="/images/astro.svg"
                 alt="astro"
-                className="absolute w-32 move-in-style"
+                className="absolute move-in-style"
               />
             </div>
             <div className="absolute bottom-0 left-0 w-full py-3 pl-2">
@@ -59,7 +64,9 @@ const SingleEventPage = () => {
                 </span>
               </p>
             </div>
-            <button
+            {
+              (status === "authenticated") 
+              ? <button
               onClick={() => {
                 registerForEvent(eid)
                   .then((res) => {
@@ -72,6 +79,9 @@ const SingleEventPage = () => {
             >
               Register
             </button>
+            : null
+            }
+            
           </div>
           <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
             <h3 className="font-bold text-xl text-white tracking-wider uppercase">
