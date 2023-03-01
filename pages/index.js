@@ -24,7 +24,7 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="w-screen h-screen flex-col relative">
+      <section className="w-full min-h-screen flex-col relative">
         <video
           className="absolute top-0 left-0 z-0 w-screen h-screen object-cover"
           src="/images/bg.mp4"
@@ -32,12 +32,12 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
           muted={true}
           loop={true}
         ></video>
-        <div className="hero-section-overlay absolute top-0 left-0 w-screen h-screen z-10"></div>
-        <div className="absolute top-0 left-0 w-screen h-screen z-20">
+        <div className="hero-section-overlay absolute top-0 left-0 w-full h-full z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full z-20">
           <HeroInfo />
         </div>
       </section>
-      <section className="bg-gradient-2 w-screen flex flex-col justify-center items-center pb-8">
+      <section className="bg-gradient-4 w-full flex flex-col justify-center items-center pb-8">
         <TimeLine
           logoLink={"something"}
           title="RESONANCEXII"

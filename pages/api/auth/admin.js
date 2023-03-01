@@ -5,7 +5,7 @@ import { authOptions } from "./[...nextauth]";
 const handler = async (req, res) => {
   const session = unstable_getServerSession(req, res, authOptions);
   if (checkAdminAccess(session)) return res.status(200).end();
-  else return res.redirect("/");
+  else return res.status(403).end();
 };
 
 export default handler;

@@ -97,6 +97,12 @@
     radial-gradient(at 50% 150%, #49668c 0, transparent 50%);
 }
 
+.bg-gradient-4 {
+  background-color: #14191f;
+  position: relative;
+  overflow: hidden;
+}
+
 .gradient-bg-footer {
   background-color: #14191f;
   background-image: radial-gradient(at 50% 150%, #49668c 0, transparent 50%);
@@ -133,7 +139,7 @@
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(#637996, #14191f);
+  background: -webkit-linear-gradient(#637996 60%, #14191f 40%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

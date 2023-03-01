@@ -3,22 +3,21 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import EventItem from "../components/EventItem";
 import { getProfileData, unregisterFromEvent } from "../feUtils/functions";
-import {useSession} from "next-auth/react"
+import { useSession } from "next-auth/react";
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState({});
 
-  const { data:session, status } = useSession()
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     if (status === "authenticated") {
       getProfileData()
-      .then((p) => setProfile(p))
-      .catch((e) => console.log(e));
+        .then((p) => setProfile(p))
+        .catch((e) => console.log(e));
     } else {
-      window.location.href = "/"
+      window.location.href = "/";
     }
-    
   }, []);
   return (
     <>
@@ -31,7 +30,9 @@ const ProfilePage = () => {
       <section className="bg-gradient-1 w-full h-full py-28 flex items-center justify-start flex-col min-h-screen">
         <div className="white-glassmorphism flex justify-start items-center py-3 px-4 w-11/12 m-4 max-w-5xl">
           <Image
-            className="w-28 rounded-full shadow-md"
+            width={150}
+            height={150}
+            className="rounded-full shadow-md"
             src={profile?.user?.image}
             alt={profile?.user?.name}
           />

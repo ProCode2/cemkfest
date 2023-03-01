@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { AiFillInstagram } from "react-icons/ai";
+import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import useScrollPosition from "../hooks/useScrollPosition";
 
 const HeroInfo = () => {
@@ -13,7 +13,7 @@ const HeroInfo = () => {
     else setShowSocial(false);
   }, [scrollPosition]);
   return (
-    <div className="w-full h-full">
+    <div className="h-full">
       <motion.div
         animate={{
           x: showSocial ? 0 : -100,
@@ -22,16 +22,13 @@ const HeroInfo = () => {
       >
         <div className="bg-[rgba(0,0,0,0.5)] p-4 rounded-md shadow-md flex flex-col justify-center items-center space-y-5 md:space-y-8">
           <span>
-            <AiFillInstagram fontSize={30} className="hover:text-slate-300" />
+            <AiFillInstagram fontSize={25} className="hover:text-slate-300" />
           </span>
           <span>
-            <AiFillInstagram fontSize={30} className="hover:text-slate-300" />
+            <AiFillFacebook fontSize={25} className="hover:text-slate-300" />
           </span>
           <span>
-            <AiFillInstagram fontSize={30} className="hover:text-slate-300" />
-          </span>
-          <span>
-            <AiFillInstagram fontSize={30} className="hover:text-slate-300" />
+            <AiFillYoutube fontSize={25} className="hover:text-slate-300" />
           </span>
         </div>
       </motion.div>

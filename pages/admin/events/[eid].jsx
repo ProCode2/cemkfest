@@ -50,6 +50,8 @@ const EditEventPage = () => {
           <div className="w-full m-4 rounded-md shadow-md shadow-slate-400 h-48 overflow-hidden relative md:max-w-5xl">
             <div className="w-full h-full object-cover absolute top-0 left-0 event-bg-overlay">
               <Image
+                width={100}
+                height={100}
                 src="/images/astro.svg"
                 alt="astro"
                 className="absolute w-32 move-in-style"

@@ -7,11 +7,6 @@ import EventsList from "../../../components/EventsList";
 import { checkAdminAccess, getAllEvents } from "../../../feUtils/functions";
 
 const EventsAdminPage = () => {
-  const [events, setEvents] = useState([]);
-
-  const { data:session, status } = useSession()
-
-
   useEffect(() => {
     try {
       checkAdminAccess();

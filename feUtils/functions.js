@@ -1,6 +1,6 @@
 export const checkAdminAccess = async () => {
   const response = await fetch("/api/auth/admin");
-  if (response.status === 307) window.location.href = "/";
+  if (response.status === 403) window.location.href = "/";
 };
 
 export const getProfileData = async () => {

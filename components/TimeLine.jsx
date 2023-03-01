@@ -45,7 +45,7 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
             className="w-16 h-16 md:w-32 md:h-32 bg-black rounded-full shadow-md absolute -left-[130px] md:-left-[245px] -top-[20px]"
           ></motion.div>
         ) : null}
-        <motion.div
+        {(title && subTitle) ? <motion.div
           initial={{ x: showPoint ? 100 : 0, opacity: showPoint ? 1 : 0 }}
           animate={{ x: showPoint ? 0 : 100, opacity: showPoint ? 1 : 0 }}
           transition={{ delay: 0.9 }}
@@ -62,6 +62,7 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
             ) : null}
           </div>
         </motion.div>
+        : null}
       </motion.div>
     </>
   );

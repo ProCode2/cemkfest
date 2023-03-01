@@ -53,7 +53,7 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
         {[
           { name: "Events", link: "/events" },
           { name: "Spandan", link: "/spandan" },
-          { name: "Team", link: "/team" },
+          { name: "Profile", link: "/profile" },
         ].map((item, index) => (
           <NavBarItem
             key={item.name + index}
@@ -98,7 +98,7 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
             {[
               { name: "Events", link: "/events" },
               { name: "Spandan", link: "/spandan" },
-              { name: "Team", link: "/team" },
+              { name: "Profile", link: "/profile" },
             ].map((item, index) => (
               <NavBarItem
                 key={item.name + index}
