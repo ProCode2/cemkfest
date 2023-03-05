@@ -106,11 +106,17 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
             {status == "loading" ? (
               <Loader classProps={"w-8 h-8"} />
             ) : status == "authenticated" ? (
-              <li>Hi, {session.user.name}!</li>
+              <li
+                key="loyo"
+                onClick={() => signIn("google")}
+                className="mx-4 cursor-pointer my-2 text-lg"
+              >
+                Logout
+              </li>
             ) : (
               <li
                 key="yolo"
-                onClick={() => signIn("google")}
+                onClick={() => signOut()}
                 className="mx-4 cursor-pointer my-2 text-lg"
               >
                 Login

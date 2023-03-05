@@ -6,6 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  min-width: fit-content;
+}
+
 .font-lato {
   font-family: "Lato", sans-serif;
 }
