@@ -25,7 +25,7 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
     <>
       <motion.div
         ref={barRef}
-        className="w-3 bg-[#49668c]"
+        className="w-1 md:w-2 bg-[#49668c]"
         animate={{
           height: showBar && 300,
         }}
@@ -45,24 +45,25 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
             className="w-16 h-16 md:w-32 md:h-32 bg-black rounded-full shadow-md absolute -left-[130px] md:-left-[245px] -top-[20px]"
           ></motion.div>
         ) : null}
-        {(title && subTitle) ? <motion.div
-          initial={{ x: showPoint ? 100 : 0, opacity: showPoint ? 1 : 0 }}
-          animate={{ x: showPoint ? 0 : 100, opacity: showPoint ? 1 : 0 }}
-          transition={{ delay: 0.9 }}
-          className="info-section-overlay w-[140px] md:w-72 rounded-md p-4 shadow-md shadow-slate-800 block absolute -right-[158px] md:-right-[360px] -top-[10px]"
-        >
-          <div className="w-full h-full relative">
-            {title ? (
-              <h3 className="uppercase tracking-wider font-bold text-sm md:text-3xl mt-b">
-                {title}
-              </h3>
-            ) : null}
-            {subTitle ? (
-              <p className="text-xs md:text-sm w-full">{subTitle}</p>
-            ) : null}
-          </div>
-        </motion.div>
-        : null}
+        {title || subTitle ? (
+          <motion.div
+            initial={{ x: showPoint ? 100 : 0, opacity: showPoint ? 1 : 0 }}
+            animate={{ x: showPoint ? 0 : 100, opacity: showPoint ? 1 : 0 }}
+            transition={{ delay: 0.4 }}
+            className="info-section-overlay w-[140px] md:w-72 rounded-md p-4 shadow-md shadow-slate-800 block absolute -right-[158px] md:-right-[360px] -top-[10px]"
+          >
+            <div className="w-full h-full relative">
+              {title ? (
+                <h3 className="uppercase tracking-wider font-bold text-sm md:text-3xl mt-b">
+                  {title}
+                </h3>
+              ) : null}
+              {subTitle ? (
+                <p className="text-xs md:text-sm w-full">{subTitle}</p>
+              ) : null}
+            </div>
+          </motion.div>
+        ) : null}
       </motion.div>
     </>
   );

@@ -11,11 +11,7 @@ import Link from "next/link";
 const NavBarItem = ({ title, classprops, link }) => {
   return (
     <Link href={link}>
-      <li
-        className={`mx-4 cursor-pointer ${classprops}`}
-      >
-        {title}
-      </li>
+      <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
     </Link>
   );
 };
@@ -62,7 +58,7 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
           />
         ))}
         {status == "loading" ? (
-          <Loader />
+          <Loader classProps={"w-8 h-8"} />
         ) : status == "authenticated" ? (
           <li
             onClick={() => signOut()}
@@ -108,7 +104,7 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
               />
             ))}
             {status == "loading" ? (
-              <Loader />
+              <Loader classProps={"w-8 h-8"} />
             ) : status == "authenticated" ? (
               <li>Hi, {session.user.name}!</li>
             ) : (

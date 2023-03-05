@@ -37,7 +37,7 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
           <HeroInfo />
         </div>
       </section>
-      <section className="bg-gradient-4 w-full flex flex-col justify-center items-center pb-8">
+      <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8">
         <TimeLine
           logoLink={"something"}
           title="RESONANCEXII"

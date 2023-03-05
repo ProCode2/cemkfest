@@ -16,88 +16,25 @@
 
 .bg-gradient {
   background-color: #14191f;
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-gradient::before {
-  content: "";
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
-  background: #49668c;
-  filter: blur(150px);
-  -webkit-filter: blur(150px);
-  left: -200px;
-  position: absolute;
-  bottom: -150px;
-}
-
-.bg-gradient::after {
-  z-index: 0;
-  content: "";
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
-  background: #49668c;
-  filter: blur(150px);
-  -webkit-filter: blur(150px);
-  right: -200px;
-  position: absolute;
-  top: -150px;
+  background: radial-gradient(
+    circle farthest-corner at bottom left,
+    #49668c 0%,
+    #14191f 20%,
+    #14191f 100%
+  );
 }
 
 .bg-gradient-1 {
   background-color: #14191f;
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-gradient-1::after {
-  z-index: 0;
-  content: "";
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
-  background: #49668c;
-  filter: blur(150px);
-  -webkit-filter: blur(150px);
-  right: -200px;
-  position: absolute;
-  top: -150px;
+  background: radial-gradient(
+    circle farthest-corner at top right,
+    #49668c 0%,
+    #14191f 30%,
+    #14191f 100%
+  );
 }
 
 .bg-gradient-2 {
-  background-color: #14191f;
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-gradient-2::before {
-  z-index: 0;
-  content: "";
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
-  background: #49668c;
-  filter: blur(150px);
-  -webkit-filter: blur(150px);
-  left: -200px;
-  position: absolute;
-  bottom: -150px;
-}
-
-.bg-gradient-3 {
-  background-color: #14191f;
-  background-image: radial-gradient(at 0% 100%, #49668c 0, transparent 50%),
-    radial-gradient(at 50% 150%, #49668c 0, transparent 50%);
-}
-
-.bg-gradient-4 {
   background-color: #14191f;
   position: relative;
   overflow: hidden;

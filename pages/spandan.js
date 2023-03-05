@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SpandanPage = () => {
   return (
-    <div className="w-full min-h-screen pt-20 bg-gradient-4">
+    <div className="w-full min-h-screen pt-20 bg-gradient">
       <div className="max-w-5xl bg-transparent mx-auto flex flex-col justify-start items-center">
         <div className="max-w-2xl border border-slate-700 rounded-md shadow-md mx-atuo m-2 mt-12 p-4 text-center mb-0">
           <h2 className="text-2xl md:text-4xl uppercase font-bold tracking-wider mb-3">

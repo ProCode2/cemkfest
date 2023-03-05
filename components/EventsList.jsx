@@ -4,21 +4,23 @@ import { useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { getAllEvents, search } from "../feUtils/functions";
 
-
 import EventItem from "./EventItem";
+import Loader from "./Loader";
 
 const EventsList = ({ eventUrlPrefix }) => {
   const [tab, setTab] = useState("1");
   const [dayOneEvents, setDayOneEvents] = useState([]);
   const [dayTwoEvents, setDayTwoEvents] = useState([]);
-  
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
   const param = router.query;
-  
+
   const [searchText, setSearchText] = useState(param?.category || "");
 
   useEffect(() => {
-    if (param != {}) setSearchText(param?.category || "")
+    if (param != {}) setSearchText(param?.category || "");
+    setLoading(true);
     getAllEvents()
       .then((es) => {
         const one = [],
@@ -32,8 +34,12 @@ const EventsList = ({ eventUrlPrefix }) => {
         });
         setDayOneEvents(one);
         setDayTwoEvents(two);
+        setLoading(false);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        setLoading(false);
+      });
   }, [param]);
 
   const getEventsTable = (tabValue) => {
@@ -105,7 +111,13 @@ const EventsList = ({ eventUrlPrefix }) => {
       </div>
 
       <div className="w-full max-w-4xl blue-glassmorphism p-4 md:p-8">
-        {getEventsTable(tab)}
+        {loading ? (
+          <div className="w-full h-full flex justify-center items-center p-3">
+            <Loader classProps={"w-20 h-20"} />
+          </div>
+        ) : (
+          getEventsTable(tab)
+        )}
       </div>
     </div>
   );
