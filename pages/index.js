@@ -26,7 +26,7 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
       </Head>
       <section className="w-full min-h-screen flex-col relative">
         <video
-          className="absolute top-0 left-0 z-0 w-screen h-screen object-cover"
+          className="absolute top-0 left-0 z-0 w-full h-full object-cover"
           src="/images/bg.mp4"
           autoPlay={true}
           muted={true}
@@ -37,14 +37,7 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
           <HeroInfo />
         </div>
       </section>
-      <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8">
-        <TimeLine
-          logoLink={"something"}
-          title="RESONANCEXII"
-          subTitle={
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem iste quia quas ducimus aspernatur, quasi cum maxime fuga cupiditate possimus non omnis consectetur eius incidunt dicta recusandae adipisci voluptatum quis!"
-          }
-        />
+      <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">
         <TimeLine
           logoLink={"something"}
           title="RESONANCEXII"

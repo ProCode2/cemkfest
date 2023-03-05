@@ -47,8 +47,14 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
         ) : null}
         {title || subTitle ? (
           <motion.div
-            initial={{ x: showPoint ? 100 : 0, opacity: showPoint ? 1 : 0 }}
-            animate={{ x: showPoint ? 0 : 100, opacity: showPoint ? 1 : 0 }}
+            initial={{
+              x: showPoint ? 100 : 0,
+              opacity: showPoint ? 1 : 0,
+            }}
+            animate={{
+              x: showPoint ? 0 : 100,
+              opacity: showPoint ? 1 : 0,
+            }}
             transition={{ delay: 0.4 }}
             className="info-section-overlay w-[140px] md:w-72 rounded-md p-4 shadow-md shadow-slate-800 block absolute -right-[158px] md:-right-[360px] -top-[10px]"
           >

@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <SessionProvider session={pageProps.session}>
-      <main className="text-white flex flex-col w-screen h-full">
+      <main className="text-white flex flex-col w-full h-full">
         <Navbar teamRef={teamRef} spandanRef={spandanRef} eventRef={eventRef} />
         <Component
           {...pageProps}
