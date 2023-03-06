@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Model } from "./Bulb";
+import { Model } from "./Mic";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Button from "./Button";
 import Link from "next/link";

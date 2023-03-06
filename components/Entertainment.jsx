@@ -17,7 +17,7 @@ const Entertainment = () => {
         >
           <Suspense fallback={null}>
             <OrbitControls enableZoom={false} />
-            <Stage preset="portrait" environment="sunset">
+            <Stage preset="portrait" environment="city">
               <ambientLight intensity={1} position={[1, 5, 10]} />
               <Model rotation={[0, 1, 0]} scale={[1, 1, 1]} />
             </Stage>

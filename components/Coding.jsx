@@ -10,7 +10,7 @@ const Coding = () => {
     <section className="w-full bg-transparent flex flex-col md:flex-row justify-center items-center py-22">
       <div className="flex-1">
         <Canvas
-          camera={{ position: [100, 10, 50], fov: 70 }}
+          camera={{ position: [100, 40, 50], fov: 50 }}
           style={{ width: "70vw", height: "70vh" }}
           flat
           linear
@@ -19,7 +19,7 @@ const Coding = () => {
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="sunset">
               <ambientLight intensity={1} position={[1, 5, 10]} />
-              <Model rotation={[0, 9, 0]} scale={[1, 1, 1]} />
+              <Model rotation={[0, -5, 0]} scale={[1, 1, 1]} />
             </Stage>
           </Suspense>
         </Canvas>

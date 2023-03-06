@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import Speakup from "../../../components/Speakup";
-import EventsList from "../../../components/EventsList";
 
 const SpeakupPage = () => {
   return (
