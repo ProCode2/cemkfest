@@ -14,9 +14,11 @@ const handler = async (req, res) => {
     return res.status(403).end();
   }
 
+  if (!session?.user?.email?.endsWith("@cemk.ac.in"))
+    return res.status(403).end();
+
   try {
     if (req.method === "PUT") {
-      console.log("here");
       await userRegisterInEvent(session.user.id, eid);
       return res.status(200).end();
     } else if (req.method === "DELETE") {

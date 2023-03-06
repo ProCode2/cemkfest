@@ -84,7 +84,8 @@ const SingleEventPage = () => {
                   <span className="">{event?.venue}</span>
                 </p>
               </div>
-              {status === "authenticated" ? (
+              {status === "authenticated" &&
+              session?.user?.email?.endsWith("@cemk.ac.in") ? (
                 <button
                   onClick={() => {
                     setLoading(true);

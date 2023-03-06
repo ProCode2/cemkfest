@@ -73,28 +73,30 @@ const ProfilePage = () => {
                         eventName={event?.name}
                         description={event?.description}
                       />
-                      <button
-                        className="bg-red-600 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-red-900"
-                        onClick={() => {
-                          setLoading(true);
-                          unregisterFromEvent(event?.id)
-                            .then((res) => {
-                              if (res.statusText == "OK") {
-                                setLoading(false);
-                                window.location.href = "/profile";
-                                alert("Successfully Unregistered.");
-                              } else {
-                                setLoading(false);
-                                throw new Error("Something went wrong");
-                              }
-                            })
-                            .catch((_) =>
-                              alert("Something went wrong, Try again.")
-                            );
-                        }}
-                      >
-                        Unregister
-                      </button>
+                      {session?.user?.email?.endsWith("@cemk.ac.in") ? (
+                        <button
+                          className="bg-red-600 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-red-900"
+                          onClick={() => {
+                            setLoading(true);
+                            unregisterFromEvent(event?.id)
+                              .then((res) => {
+                                if (res.statusText == "OK") {
+                                  setLoading(false);
+                                  window.location.href = "/profile";
+                                  alert("Successfully Unregistered.");
+                                } else {
+                                  setLoading(false);
+                                  throw new Error("Something went wrong");
+                                }
+                              })
+                              .catch((_) =>
+                                alert("Something went wrong, Try again.")
+                              );
+                          }}
+                        >
+                          Unregister
+                        </button>
+                      ) : null}
                     </div>
                   ))
                 )}
