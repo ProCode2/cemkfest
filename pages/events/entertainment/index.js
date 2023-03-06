@@ -12,7 +12,7 @@ const EntertainmentPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="bg-gradient-1 w-screen h-full flex flex-col justify-center items-center">
+      <section className="bg-gradient-1 w-screen min-h-screen flex flex-col justify-center items-center">
         <Entertainment />
       </section>
     </>

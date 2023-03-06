@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Robotics = () => {
   return (
-    <section className="w-full bg-transparent flex justify-center items-center py-8">
+    <section className="w-full bg-transparent flex flex-col md:flex-row justify-center items-center py-8">
       <div className="flex-1">
         <Canvas
           camera={{ position: [100, 10, 50], fov: 70 }}
@@ -23,15 +23,15 @@ const Robotics = () => {
           </Suspense>
         </Canvas>
       </div>
-      <div className="flex-1 relative">
-        <div className="w-full h-full absolute top-0 bottom-0 flex flex-col justify-center items-start -left-44">
+      <div className="flex-1">
+        <div className="w-full h-full flex flex-col justify-center items-start">
           <h1 className="text-gradient font-bold text-3xl md:text-6xl tracking-wide text-left">
             Robotics
           </h1>
           <p className="text-base md:text-lg mt-2 mb-3">
             Experience the heat of bot wars!
           </p>
-          <Link href={{ pathname: '/events', query: { category: 'robotics' } }}>
+          <Link href={{ pathname: "/events", query: { category: "robotics" } }}>
             <Button text="See Events" />
           </Link>
         </div>
