@@ -12,6 +12,9 @@ import useScrollPosition from "../hooks/useScrollPosition";
 import { useOnScreen } from "../hooks/useOnScreen";
 import TimeLine from "../components/TimeLine";
 import HeroInfo from "../components/HeroInfo";
+import Image from "next/image";
+
+import ResonanceLong from "../public/images/long_logo.png";
 
 export default function Home({ teamRef, spandanRef, eventRef }) {
   const companyCommonStyles =
@@ -36,11 +39,16 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
         <div className="absolute top-0 left-0 w-full h-full z-20">
           <HeroInfo />
         </div>
+        <Image
+          src={ResonanceLong}
+          width={500}
+          className="absolute top-0 bottom-0 my-auto left-0 right-0 mx-auto drop-shadow-xl z-30"
+        />
       </section>
       <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">
         <TimeLine
           logoLink={"something"}
-          title="RESONANCEXII"
+          title={<Image src={ResonanceLong} />}
           subTitle={
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem iste quia quas ducimus aspernatur, quasi cum maxime fuga cupiditate possimus non omnis consectetur eius incidunt dicta recusandae adipisci voluptatum quis!"
           }
