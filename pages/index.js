@@ -1,24 +1,13 @@
 import Head from "next/head";
-import { BsPlusLg } from "react-icons/bs";
 import Events from "../components/Events";
-// import CountDown from "../components/CountDown";
-import { useEffect, useRef, useState } from "react";
-import Cultutal from "../components/Cultural";
-import Team from "../components/Team";
-import SearchEvent from "../components/SearchEvent";
-import ArcReactor from "../components/ArcReactor";
-
-import useScrollPosition from "../hooks/useScrollPosition";
-import { useOnScreen } from "../hooks/useOnScreen";
 import TimeLine from "../components/TimeLine";
 import HeroInfo from "../components/HeroInfo";
 import Image from "next/image";
 
 import ResonanceLong from "../public/images/long_logo.png";
+import ResonanceLongSlim from "../public/images/long_logo_slim.png";
 
-export default function Home({ teamRef, spandanRef, eventRef }) {
-  const companyCommonStyles =
-    "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
+export default function Home() {
   return (
     <>
       <Head>
@@ -42,16 +31,15 @@ export default function Home({ teamRef, spandanRef, eventRef }) {
         <Image
           src={ResonanceLong}
           width={500}
-          className="absolute top-0 bottom-0 my-auto left-0 right-0 mx-auto drop-shadow-xl z-30"
+          alt="Resonance XII"
+          className="absolute top-0 bottom-0 my-auto left-0 right-0 mx-auto drop-shadow-xl z-10"
         />
       </section>
       <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">
         <TimeLine
           logoLink={"something"}
-          title={<Image src={ResonanceLong} />}
-          subTitle={
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem iste quia quas ducimus aspernatur, quasi cum maxime fuga cupiditate possimus non omnis consectetur eius incidunt dicta recusandae adipisci voluptatum quis!"
-          }
+          title={<Image src={ResonanceLongSlim} width={200} />}
+          subTitle="Explore a pool of technical events such as Robo Wars, Capture the flags, Hackathons, Brain games and win exciting prizes!"
         />
         <TimeLine title="Events" />
         <Events />

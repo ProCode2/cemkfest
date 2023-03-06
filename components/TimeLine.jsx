@@ -60,7 +60,7 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
           >
             <div className="w-full h-full relative">
               {title ? (
-                <h3 className="uppercase tracking-wider font-bold text-sm md:text-3xl mt-b">
+                <h3 className="uppercase tracking-wider font-bold text-sm md:text-3xl">
                   {title}
                 </h3>
               ) : null}

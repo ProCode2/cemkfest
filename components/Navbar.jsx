@@ -6,7 +6,8 @@ import Loader from "./Loader";
 import useScrollPosition from "../hooks/useScrollPosition";
 import Link from "next/link";
 
-// import logo from "../public/vercel.svg";
+import Logo from "../public/images/long_logo_slim.png";
+import Image from "next/image";
 
 const NavBarItem = ({ title, classprops, link }) => {
   return (
@@ -16,7 +17,7 @@ const NavBarItem = ({ title, classprops, link }) => {
   );
 };
 
-const Navbar = ({ teamRef, spandanRef, eventRef }) => {
+const Navbar = () => {
   // console.log(teamRef);
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [updateNavColor, setUpdateNavColor] = useState(false);
@@ -40,9 +41,7 @@ const Navbar = ({ teamRef, spandanRef, eventRef }) => {
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
         {/* <img src={logo} alt="logo" className="w-32 cursor-pointer" /> */}
         <Link href="/">
-          <h1 className="text-3xl font-koulen text-white font-bold">
-            ResonanceXII
-          </h1>
+          <Image src={Logo} width={250} alt="Resonance XII" />
         </Link>
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
