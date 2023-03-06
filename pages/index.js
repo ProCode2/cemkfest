@@ -10,12 +10,6 @@ import ResonanceLongSlim from "../public/images/long_logo_slim.png";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>ResonanceXII</title>
-        <meta name="description" content="Unleash The Matrix" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <section className="w-full min-h-screen flex-col relative">
         <video
           className="absolute top-0 left-0 z-0 w-full h-full object-cover"
