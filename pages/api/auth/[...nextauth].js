@@ -22,10 +22,10 @@ export const authOptions = {
   ],
   callbacks: {
     // only users with cemk mail can login
-    // signIn: async ({ user }) => {
-    //   const isAllowedToSignIn = user?.email.includes("@cemk.ac.in");
-    //   return isAllowedToSignIn;
-    // },
+    signIn: async ({ user }) => {
+      const isAllowedToSignIn = user?.email.includes("@cemk.ac.in");
+      return isAllowedToSignIn;
+    },
     session: async ({ session, token, user }) => {
       if (session?.user) {
         session.user.id = user.id;
