@@ -44,6 +44,7 @@ export const updateEvent = async (eid, event) => {
     method: "PUT",
     body: JSON.stringify(event),
   });
+  return response;
 };
 
 export const search = (events, searchText) => {

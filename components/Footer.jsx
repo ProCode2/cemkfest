@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import Logo from "../public/images/long_logo_slim.png";
+import Logo from "../public/images/long_logo_slim.webp";
 
 const Footer = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer">

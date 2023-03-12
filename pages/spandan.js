@@ -4,6 +4,9 @@ import { useState } from "react";
 import TimeLine from "../components/TimeLine";
 import { BiShareAlt } from "react-icons/bi";
 import Head from "next/head";
+import SLogo from "../public/images/spandan_logo.webp";
+import Image from "next/image";
+import SpandanGallery from "../components/SpandanGallery";
 
 const SpandanPage = () => {
   const songs = [
@@ -38,12 +41,10 @@ const SpandanPage = () => {
   }, []);
   return (
     <>
-      <div className="w-full min-h-screen pt-20 bg-gradient">
+      <div className="w-full min-h-screen pt-32 bg-gradient">
         <div className="max-w-5xl bg-transparent mx-auto flex flex-col justify-start items-center">
-          <div className="max-w-2xl border border-slate-700 rounded-md shadow-md mx-atuo m-2 mt-12 p-4 text-center mb-0">
-            <h2 className="text-2xl md:text-4xl uppercase font-bold tracking-wider mb-3">
-              Spandan 2k23
-            </h2>
+          <div className="max-w-2xl rounded-md shadow-md mx-atuo m-2 mt-12 p-4 text-center mb-0">
+            <Image src={SLogo} alt="Spandan 2K23" />
             <p className="text-sm md:text-base text-slate-300">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Perspiciatis quam sint nisi repellendus totam libero ex vel? Eum
@@ -79,6 +80,9 @@ const SpandanPage = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="block md:hidden max-w-4xl bg-transparent p-6 mx-auto">
+          <SpandanGallery />
         </div>
         {/* fixed bottom-10 right-10 p-4 rounded-md shadow-md text-sm text-slate-900 bg-slate-100 */}
         <div className="fixed bottom-3 right-3 md:bottom-8 md:right-8 p-4 rounded-md shadow-md max-w-max">

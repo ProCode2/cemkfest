@@ -4,8 +4,8 @@ import TimeLine from "../components/TimeLine";
 import HeroInfo from "../components/HeroInfo";
 import Image from "next/image";
 
-import ResonanceLong from "../public/images/long_logo.png";
-import ResonanceLongSlim from "../public/images/long_logo_slim.png";
+import ResonanceLong from "../public/images/long_logo.webp";
+import ResonanceLongSlim from "../public/images/long_logo_slim.webp";
 
 export default function Home() {
   return (

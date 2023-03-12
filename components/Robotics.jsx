@@ -4,6 +4,7 @@ import { Model } from "./Scene";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Button from "./Button";
 import Link from "next/link";
+import CanvasLoader from "./CanvasLoader";
 
 const Robotics = () => {
   return (
@@ -15,7 +16,7 @@ const Robotics = () => {
           flat
           linear
         >
-          <Suspense fallback={null}>
+          <Suspense fallback={<CanvasLoader />}>
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="sunset">
               <Model rotation={[0, 0, 0]} scale={[1, 1, 1]} />

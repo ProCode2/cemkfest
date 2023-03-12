@@ -4,11 +4,20 @@ import { FirestoreAdapter } from "@next-auth/firebase-adapter";
 
 import { firebaseConfig } from "../../../firebase.config";
 
+const clientId =
+  process.env.ENVIRONMENT === "production"
+    ? process.env.GOOGLE_PROD_CLIENT_ID
+    : process.env.GOOGLE_CLIENT_ID;
+const clientSecret =
+  process.env.ENVIRONMENT === "production"
+    ? process.env.GOOGLE_PROD_CLIENT_SECRET
+    : process.env.GOOGLE_CLIENT_SECRET;
+
 export const authOptions = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: clientId,
+      clientSecret: clientSecret,
     }),
   ],
   callbacks: {

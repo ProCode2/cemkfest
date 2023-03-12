@@ -40,10 +40,21 @@ const EditEventPage = () => {
   }, [eid]);
 
   const handleUpdate = () => {
+    setLoading(true);
     updateEvent(eid, event)
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((e) => console.log(e));
+      .then((res) => {
+        console.log(res);
+        if (res.ok)
+          alert("Updated");
+        else
+          alert("Something went wrong, Please try again.")
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.log(e);
+        alert("Something went wrong, Please try again.");
+        setLoading(false);
+      });
   };
 
   return (

@@ -1,5 +1,8 @@
 export const checkAdminAccess = (session) => {
-  return session?.user?.email === "it2019@cemk.ac.in";
+  return (
+    process.env.SITE_ADMINS.split(",").includes(session?.user?.email) ||
+    session?.user?.email === "it2019@cemk.ac.in"
+  );
 };
 
 export const checkUserLoggedIn = (session) => {

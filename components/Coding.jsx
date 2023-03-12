@@ -17,7 +17,7 @@ const Coding = () => {
         >
           <Suspense fallback={null}>
             <OrbitControls enableZoom={false} />
-            <Stage preset="portrait" environment="sunset">
+            <Stage preset="portrait" environment="park">
               <ambientLight intensity={1} position={[1, 5, 10]} />
               <Model rotation={[0, -5, 0]} scale={[1, 1, 1]} />
             </Stage>

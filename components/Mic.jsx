@@ -11,7 +11,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/Mic.gltf')
+  const { nodes, materials } = useGLTF('/mic.gltf')
   return (
     <group {...props} dispose={null}>
       <group position={[-0.7, 23.81, -0.93]} scale={0.96}>

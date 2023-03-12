@@ -4,6 +4,7 @@ import { Model } from "./Game";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Button from "./Button";
 import Link from "next/link";
+import CanvasLoader from "./CanvasLoader";
 
 const Gaming = () => {
   return (
@@ -15,7 +16,7 @@ const Gaming = () => {
           flat
           linear
         >
-          <Suspense fallback={null}>
+          <Suspense fallback={<CanvasLoader />}>
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="city">
               <ambientLight intensity={2} position={[7, 5, 7]} />
