@@ -107,7 +107,7 @@ const Navbar = () => {
             ) : status == "authenticated" ? (
               <li
                 key="loyo"
-                onClick={() => signIn("google")}
+                onClick={() => signOut()}
                 className="mx-4 cursor-pointer my-2 text-lg"
               >
                 Logout
@@ -115,7 +115,7 @@ const Navbar = () => {
             ) : (
               <li
                 key="yolo"
-                onClick={() => signOut()}
+                onClick={() => signIn("google")}
                 className="mx-4 cursor-pointer my-2 text-lg"
               >
                 Login
