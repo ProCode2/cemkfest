@@ -25,9 +25,9 @@ const firebaseProdConfig = {
 };
 
 const firebaseConfig =
-  process.env.ENVIRONMENT === "production"
+  (process.env.ENVIRONMENT === "production"
     ? firebaseProdConfig
-    : firebaseDevConfig;
+    : firebaseDevConfig) || firebaseProdConfig;
 
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
