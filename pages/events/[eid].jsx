@@ -115,11 +115,7 @@ const SingleEventPage = () => {
                 Rules
               </h3>
               <div className="text-sm font-mono  text-slate-600 mt-3">
-                <ul>
-                  {Object.values(event?.rules || {}).map((rule) => (
-                    <li key={rule}>{rule}</li>
-                  ))}
-                </ul>
+                {event?.description}
               </div>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">

@@ -58,8 +58,7 @@ const EditEventPage = () => {
   };
 
   return (
-    <>
-      <section className="bg-gradient-1 w-full h-full min-h-screen py-28 flex items-center justify-start flex-col px-2">
+    <section className="bg-gradient-1 w-full h-full min-h-screen py-28 flex items-center justify-start flex-col px-2">
         {loading ? (
           <Loader classProps={"w-20 h-20"} />
         ) : (
@@ -96,9 +95,9 @@ const EditEventPage = () => {
             <div className="w-full md:max-w-5xl p-2 flex justify-end items-center">
               <button
                 className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] ml-auto"
-                onClick={handleUpdate}
+                onClick={handleAdd}
               >
-                Update
+                Add
               </button>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 py-2 rounded-md shadow-md blue-glassmorphism flex justify-between items-center">
@@ -121,6 +120,56 @@ const EditEventPage = () => {
                     />
                   </span>
                 </p>
+                <p className="">
+                  <span className="font-bold text-base text-white">Venue</span>
+                  <span className="">
+                    <input
+                      className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
+                      placeholder="Eg: S203"
+                      value={event?.venue}
+                      onChange={(e) =>
+                        setEvent((prevE) => ({
+                          ...prevE,
+                          venue: e.target.value,
+                        }))
+                      }
+                    />
+                  </span>
+                </p>
+                <p className="">
+                  <span className="font-bold text-base text-white">
+                    Category
+                  </span>
+                  <span className="">
+                    <select
+                      defaultValue="Robotics"
+                      name="category"
+                      id="category"
+                      className="appearance-none blue-glassmorphism px-3 py-2 my-2 mx-3"
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        setEvent((prevE) => ({
+                          ...prevE,
+                          category: e.target.value,
+                        }));
+                      }}
+                    >
+                      {[
+                        "Robotics",
+                        "Coding",
+                        "Entertainment",
+                        "Innovation",
+                        "Gaming",
+                        "BrainGames",
+                        "SpeakUp",
+                      ].map((cat) => (
+                        <option key={cat} value={cat}>
+                          {cat}
+                        </option>
+                      ))}
+                    </select>
+                  </span>
+                </p>
               </div>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
@@ -140,49 +189,20 @@ const EditEventPage = () => {
               ></textarea>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
-              <div className="w-full flex justify-between items-center">
-                <h3 className="font-bold text-xl text-white tracking-wider uppercase">
-                  Rules
-                </h3>
-                <button
-                  className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
-                  onClick={() => {
-                    setEvent((prevE) => ({
-                      ...prevE,
-                      rules: { ...prevE.rules, [`rule${uuidv4()}`]: "" },
-                    }));
-                  }}
-                >
-                  Add
-                </button>
-              </div>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
-                {Object.entries(event?.rules || {}).map(([key, value]) => (
-                  <div className="flex justify-center items-center" key={key}>
-                    <input
-                      type="text"
-                      className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
-                      placeholder="Enter a rule"
-                      value={value}
-                      onChange={(e) => {
-                        setEvent((prevE) => ({
-                          ...prevE,
-                          rules: { ...prevE.rules, [key]: e.target.value },
-                        }));
-                      }}
-                    />
-                    <MdDeleteForever
-                      className="text-red-500 text-2xl ml-8 cursor-pointer"
-                      onClick={() => {
-                        return setEvent((prevE) => {
-                          delete prevE.rules[key];
-                          return { ...prevE };
-                        });
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
+              <h3 className="font-bold text-xl text-white tracking-wider uppercase">
+                Rules
+              </h3>
+              <textarea
+                className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2 w-full"
+                placeholder="Rules"
+                value={event?.rules}
+                onChange={(e) =>
+                  setEvent((prevE) => ({
+                    ...prevE,
+                    rules: e.target.value,
+                  }))
+                }
+              ></textarea>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
               <div className="w-full flex justify-between items-center">
@@ -230,9 +250,9 @@ const EditEventPage = () => {
                         }}
                       />
                       <input
-                        type="text"
+                        type="number"
                         className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
-                        placeholder="Enter Name"
+                        placeholder="Enter number"
                         value={value.phone}
                         onChange={(e) => {
                           setEvent((prevE) => ({
@@ -264,7 +284,6 @@ const EditEventPage = () => {
           </div>
         )}
       </section>
-    </>
   );
 };
 
