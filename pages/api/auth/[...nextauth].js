@@ -37,14 +37,6 @@ export const authOptions = {
       return session;
     },
   },
-  events: {
-    signIn: ({ user, account, profile, isNewUser }) => {
-      console.log(`isNewUser: ${JSON.stringify(isNewUser)}`);
-    },
-    // updateUser({ user })
-  },
-  // Enable debug messages in the console if you are having problems
-  debug: true,
   adapter: FirestoreAdapter({
     ...firebaseConfig,
     // emulator: {
