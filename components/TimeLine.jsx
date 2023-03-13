@@ -46,6 +46,7 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
           >{logoLink}</motion.div>
         ) : null}
         {title || subTitle ? (
+          
           <motion.div
             initial={{
               x: showPoint ? 100 : 0,
@@ -58,11 +59,12 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
             transition={{ delay: 0.4 }}
             className="info-section-overlay w-[140px] md:w-72 rounded-md p-4 shadow-md shadow-slate-800 block absolute -right-[158px] md:-right-[360px] -top-[10px]"
           >
+            
             <div className="w-full h-full relative">
               {title ? (
-                <h3 className="uppercase tracking-wider font-bold text-sm md:text-3xl">
+                <div className="uppercase tracking-wider font-bold text-base md:text-3xl">
                   {title}
-                </h3>
+                </div>
               ) : null}
               {subTitle ? (
                 <p className="text-xs md:text-sm w-full">{subTitle}</p>

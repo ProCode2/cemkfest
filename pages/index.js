@@ -7,6 +7,7 @@ import Image from "next/image";
 import ResonanceLong from "../public/images/long_logo.webp";
 import ResonanceLongSlim from "../public/images/long_logo_slim.webp";
 import ResoLogo from "../public/images/reso.webp";
+import Tilt from "react-tilt";
 
 export default function Home() {
   return (
@@ -31,9 +32,28 @@ export default function Home() {
       </section>
       <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">
         <TimeLine
-          logoLink={<Image src={ResoLogo} alt="Resonance" />}
-          title={<Image src={ResonanceLongSlim} width={200} />}
-          subTitle="Explore a pool of technical events such as Robo Wars, Capture the flags, Hackathons, Brain games and win exciting prizes!"
+          logoLink={
+            <Tilt
+              className="Tilt"
+              options={{
+                reverse: false, // reverse the tilt direction
+                max: 50, // max tilt rotation (degrees)
+                perspective: 100, // Transform perspective, the lower the more extreme the tilt gets.
+                scale: 1, // 2 = 200%, 1.5 = 150%, etc..
+                speed: 300, // Speed of the enter/exit transition
+                transition: true, // Set a transition on enter/exit.
+                axis: null, // What axis should be disabled. Can be X or Y.
+                reset: true, // If the tilt effect has to be reset on exit.
+                easing: "cubic-bezier(.03,.98,.52,.99)",
+              }}
+            >
+              <Image className="Tilt-inner" src={ResoLogo} alt="Resonance" />
+            </Tilt>
+          }
+          title={<Image src={ResonanceLongSlim} width={300} />}
+          subTitle={
+            "Explore a pool of technical events such as Robo Wars, Capture the flags, Hackathons, Brain games and win exciting prizes!"
+          }
         />
         <TimeLine title="Events" />
         <Events />
