@@ -114,9 +114,9 @@ const SingleEventPage = () => {
               <h3 className="font-bold text-xl text-white tracking-wider uppercase">
                 Rules
               </h3>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
-                {event?.description}
-              </div>
+              <pre className="text-sm font-mono  text-slate-600 mt-3">
+                {`${event?.rules}`}
+              </pre>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
               <h3 className="font-bold text-xl text-white tracking-wider uppercase">

@@ -95,9 +95,9 @@ const EditEventPage = () => {
             <div className="w-full md:max-w-5xl p-2 flex justify-end items-center">
               <button
                 className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] ml-auto"
-                onClick={handleAdd}
+                onClick={handleUpdate}
               >
-                Add
+                Update
               </button>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 py-2 rounded-md shadow-md blue-glassmorphism flex justify-between items-center">
