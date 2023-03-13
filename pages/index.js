@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import ResonanceLong from "../public/images/long_logo.webp";
 import ResonanceLongSlim from "../public/images/long_logo_slim.webp";
+import ResoLogo from "../public/images/reso.webp";
 
 export default function Home() {
   return (
@@ -30,14 +31,16 @@ export default function Home() {
       </section>
       <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">
         <TimeLine
-          logoLink={"something"}
+          logoLink={<Image src={ResoLogo} alt="Resonance" />}
           title={<Image src={ResonanceLongSlim} width={200} />}
           subTitle="Explore a pool of technical events such as Robo Wars, Capture the flags, Hackathons, Brain games and win exciting prizes!"
         />
         <TimeLine title="Events" />
         <Events />
         <TimeLine title="Sponsors" />
-        <Events />
+        <div className="pt-12 pb-56">
+          <h2 className="text-gradient text-2xl font-bold">Coming Soon!</h2>
+        </div>
       </section>
     </>
   );

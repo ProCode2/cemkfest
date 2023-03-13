@@ -42,8 +42,8 @@ const TimeLine = ({ logoLink, title, subTitle }) => {
             initial={{ x: showPoint ? -100 : 0, opacity: showPoint ? 1 : 0 }}
             animate={{ x: showPoint ? 0 : -100, opacity: showPoint ? 1 : 0 }}
             transition={{ delay: 0.3 }}
-            className="w-16 h-16 md:w-32 md:h-32 bg-black rounded-full shadow-md absolute -left-[130px] md:-left-[245px] -top-[20px]"
-          ></motion.div>
+            className="absolute -left-[218px] md:-left-[245px] -top-[38px]"
+          >{logoLink}</motion.div>
         ) : null}
         {title || subTitle ? (
           <motion.div

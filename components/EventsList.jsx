@@ -31,6 +31,7 @@ const EventsList = ({ eventUrlPrefix }) => {
           const day = dt.getDate();
           if (day == 4) one.push(e);
           else if (day == 5) two.push(e);
+          else one.push(e);
         });
         setDayOneEvents(one);
         setDayTwoEvents(two);
