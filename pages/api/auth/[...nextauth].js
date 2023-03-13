@@ -23,23 +23,23 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     // only users with cemk mail can login
-    // signIn: async ({ user }) => {
-    //   const isAllowedToSignIn = user?.email?.includes("@cemk.ac.in");
-    //   return isAllowedToSignIn;
-    // },
-    // session: async ({ session, token, user }) => {
-    //   if (session?.user) {
-    //     session.user.id = user?.id;
-    //   }
-    //   return session;
-    // },
+    signIn: async ({ user }) => {
+      const isAllowedToSignIn = user?.email?.includes("@cemk.ac.in");
+      return isAllowedToSignIn;
+    },
+    session: async ({ session, token, user }) => {
+      if (session?.user) {
+        session.user.id = user?.id;
+      }
+      return session;
+    },
   },
-  // events: {
-  //   signIn: ({ user, account, profile, isNewUser }) => {
-  //     console.log(`isNewUser: ${JSON.stringify(isNewUser)}`);
-  //   },
-  //   // updateUser({ user })
-  // },
+  events: {
+    signIn: ({ user, account, profile, isNewUser }) => {
+      console.log(`isNewUser: ${JSON.stringify(isNewUser)}`);
+    },
+    // updateUser({ user })
+  },
   // Enable debug messages in the console if you are having problems
   debug: true,
   adapter: FirestoreAdapter({
