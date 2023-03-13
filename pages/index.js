@@ -35,7 +35,7 @@ export default function Home() {
           logoLink={
             <Tilt
               gyroscope={true}
-              tiltMaxAngleX={45}
+              tiltMaxAngleX={35}
               perspective={300}
               trackOnWindow={false}
             >
