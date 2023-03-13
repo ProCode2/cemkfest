@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import Logo from "../public/images/long_logo_slim.webp";
@@ -12,18 +13,18 @@ const Footer = () => (
         <Image src={Logo} width={250} />
       </div>
       <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-        <p className="text-white text-base text-center mx-2 cursor-pointer">
+        {/* <p className="text-white text-base text-center mx-2 cursor-pointer">
           Brochure
         </p>
         <p className="text-white text-base text-center mx-2 cursor-pointer">
           Sponsorships
         </p>
         <p className="text-white text-base text-center mx-2 cursor-pointer">
-          Contact
-        </p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">
           Team
-        </p>
+        </p> */}
+        <Link href="tel: +91 6291180934"><p className="text-white text-base text-center mx-2 cursor-pointer">
+          Contact
+        </p></Link>
       </div>
     </div>
 

@@ -4,16 +4,26 @@ import React from "react";
 import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-import Image1 from "../public/images//meta_logo.png";
+import Image1 from "../public/images/gallery/1.webp";
+import Image2 from "../public/images/gallery/2.webp";
+import Image3 from "../public/images/gallery/3.webp";
+import Image4 from "../public/images/gallery/4.webp";
+import Image5 from "../public/images/gallery/5.webp";
+import Image6 from "../public/images/gallery/6.webp";
+import Image7 from "../public/images/gallery/7.webp";
+import Image8 from "../public/images/gallery/8.webp";
 
 const Slideshow = () => {
 	//Array of Images
 	const images = [
 		Image1,
-		Image1,
-		Image1,
-		Image1,
-		Image1,
+		Image2,
+		Image3,
+		Image4,
+		Image5,
+		Image6,
+		Image7,
+		Image8,
 	];
 
 	//These are custom properties for zoom effect while slide-show

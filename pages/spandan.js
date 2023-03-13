@@ -7,6 +7,17 @@ import Head from "next/head";
 import SLogo from "../public/images/spandan_logo.webp";
 import Image from "next/image";
 import SpandanGallery from "../components/SpandanGallery";
+import Image1 from "../public/images/gallery/1.webp";
+import Image2 from "../public/images/gallery/2.webp";
+import Image3 from "../public/images/gallery/3.webp";
+import Image4 from "../public/images/gallery/4.webp";
+import Image5 from "../public/images/gallery/5.webp";
+import Image6 from "../public/images/gallery/6.webp";
+import Image7 from "../public/images/gallery/7.webp";
+import Image8 from "../public/images/gallery/8.webp";
+
+//Array of Images
+const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8];
 
 const SpandanPage = () => {
   const songs = [
@@ -54,9 +65,11 @@ const SpandanPage = () => {
           </div>
           <TimeLine />
         </div>
-        <div className="hidden md:block max-w-4xl md:h-[800px] bg-transparent p-6 mx-auto">
+        {/* <div className="hidden md:block max-w-4xl md:h-[800px] bg-transparent p-6 mx-auto">
           <div className="flex h-full w-full flex-col overflow-hidden rounded-md shadow-lg shadow-gray-900">
-            <div className="flex-[3] bg-slate-800"></div>
+            <div className="flex-[3] bg-slate-800">
+              <Image src={Image1} alt={"Performance"} className="flex-[3]" />
+            </div>
             <div className="flex flex-[7] bg-white">
               <div className="flex-[2]"></div>
               <div className="flex flex-[8] flex-col bg-red-500">
@@ -80,8 +93,8 @@ const SpandanPage = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="block md:hidden max-w-4xl bg-transparent p-6 mx-auto">
+        </div> */}
+        <div className="max-w-4xl bg-transparent p-6 mx-auto">
           <SpandanGallery />
         </div>
         {/* fixed bottom-10 right-10 p-4 rounded-md shadow-md text-sm text-slate-900 bg-slate-100 */}
