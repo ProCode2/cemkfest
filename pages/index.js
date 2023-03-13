@@ -33,7 +33,12 @@ export default function Home() {
       <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">
         <TimeLine
           logoLink={
-            <Tilt gyroscope={true} tiltMaxAngleX={45} perspective={300}>
+            <Tilt
+              gyroscope={true}
+              tiltMaxAngleX={45}
+              perspective={300}
+              trackOnWindow={false}
+            >
               <Image className="Tilt-inner" src={ResoLogo} alt="Resonance" />
             </Tilt>
           }
