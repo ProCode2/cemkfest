@@ -86,7 +86,7 @@ const SingleEventPage = () => {
                     registerForEvent(eid)
                       .then((res) => {
                         setLoading(false);
-                        if (res.statusText == "OK") {
+                        if (res.ok) {
                           alert("Registered successfully");
                         } else {
                           alert("Please try again");
