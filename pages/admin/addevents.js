@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import { useEffect } from "react";
@@ -11,7 +10,17 @@ import Loader from "../../components/Loader";
 
 const AddEventPage = () => {
   const router = useRouter();
-  const [event, setEvent] = useState({});
+  const [event, setEvent] = useState({
+    category: "",
+    coordinators: {},
+    created: "",
+    description: "",
+    name: "",
+    rules: "",
+    tagline: "",
+    time: "",
+    venue: "",
+  });
 
   const [loading, setLoading] = useState(false);
 
@@ -108,7 +117,7 @@ const AddEventPage = () => {
                   <span className="">
                     <input
                       className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
-                      placeholder="Eg: 04/04/23 3:30 PM"
+                      placeholder="Eg: S203"
                       value={event?.venue}
                       onChange={(e) =>
                         setEvent((prevE) => ({
@@ -130,6 +139,7 @@ const AddEventPage = () => {
                       id="category"
                       className="appearance-none blue-glassmorphism px-3 py-2 my-2 mx-3"
                       onChange={(e) => {
+                        console.log(e.target.value);
                         setEvent((prevE) => ({
                           ...prevE,
                           category: e.target.value,
@@ -171,49 +181,20 @@ const AddEventPage = () => {
               ></textarea>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
-              <div className="w-full flex justify-between items-center">
-                <h3 className="font-bold text-xl text-white tracking-wider uppercase">
-                  Rules
-                </h3>
-                <button
-                  className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
-                  onClick={() => {
-                    setEvent((prevE) => ({
-                      ...prevE,
-                      rules: { ...prevE.rules, [`rule${uuidv4()}`]: "" },
-                    }));
-                  }}
-                >
-                  Add
-                </button>
-              </div>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
-                {Object.entries(event?.rules || {}).map(([key, value]) => (
-                  <div className="flex justify-center items-center" key={key}>
-                    <input
-                      type="text"
-                      className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
-                      placeholder="Enter a rule"
-                      value={value}
-                      onChange={(e) => {
-                        setEvent((prevE) => ({
-                          ...prevE,
-                          rules: { ...prevE.rules, [key]: e.target.value },
-                        }));
-                      }}
-                    />
-                    <MdDeleteForever
-                      className="text-red-500 text-2xl ml-8 cursor-pointer"
-                      onClick={() => {
-                        return setEvent((prevE) => {
-                          delete prevE.rules[key];
-                          return { ...prevE };
-                        });
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
+              <h3 className="font-bold text-xl text-white tracking-wider uppercase">
+                Rules
+              </h3>
+              <textarea
+                className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2 w-full"
+                placeholder="Rules"
+                value={event?.rules}
+                onChange={(e) =>
+                  setEvent((prevE) => ({
+                    ...prevE,
+                    rules: e.target.value,
+                  }))
+                }
+              ></textarea>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
               <div className="w-full flex justify-between items-center">
@@ -261,9 +242,9 @@ const AddEventPage = () => {
                         }}
                       />
                       <input
-                        type="text"
+                        type="number"
                         className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
-                        placeholder="Enter Name"
+                        placeholder="Enter number"
                         value={value.phone}
                         onChange={(e) => {
                           setEvent((prevE) => ({

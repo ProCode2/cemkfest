@@ -7,6 +7,8 @@ import Head from "next/head";
 import SLogo from "../public/images/spandan_logo.webp";
 import Image from "next/image";
 import SpandanGallery from "../components/SpandanGallery";
+import { motion } from "framer-motion";
+
 import Image1 from "../public/images/gallery/1.webp";
 import Image2 from "../public/images/gallery/2.webp";
 import Image3 from "../public/images/gallery/3.webp";
@@ -127,6 +129,62 @@ const SpandanPage = () => {
               ) : null}
             </span>
           </span>
+        </div>
+        <div className="w-full max-w-5xl p-4 mx-auto overflow-hidden">
+          <h1 className="text-gradient font-bold text-2xl md:text-4xl tracking-wide text-center">
+            Our Artists This Year
+          </h1>
+          <motion.div
+            initial={{
+              x: -100,
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            className="w-full flex flex-col md:flex-row my-12 overflow-hidden rounded-md shadow-md"
+          >
+            <div className="flex-1">
+              <Image src={Image2} alt="Ashes" />
+            </div>
+
+            <div className="flex-1 flex flex-col justify-center items-center p-6">
+              <h1 className="text-gradient font-bold text-2xl md:text-6xl tracking-wide text-center mb-4">
+                Ashes
+              </h1>
+              <Link href="#">
+                <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+                  Check Out
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{
+              x: 200,
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            className="w-full flex flex-col md:flex-row my-12 overflow-hidden rounded-md shadow-md"
+          >
+            <div className="flex-1 flex flex-col justify-center items-center p-6">
+              <h1 className="text-gradient font-bold text-2xl md:text-6xl tracking-wide text-center mb-4">
+                Ashes
+              </h1>
+              <Link href="#">
+                <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+                  Check Out
+                </button>
+              </Link>
+            </div>
+            <div className="flex-1">
+              <Image src={Image2} alt="Ashes" />
+            </div>
+          </motion.div>
         </div>
 
         <audio ref={audioRef} src="/se_amare.mp3" className="hidden"></audio>

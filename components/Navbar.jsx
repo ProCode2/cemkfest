@@ -48,9 +48,9 @@ const Navbar = () => {
         {[
           { name: "Events", link: "/events" },
           { name: "Spandan", link: "/spandan" },
-          { name: "Profile", link: "/profile" },
+          status == "authenticated" && ({ name: "Profile", link: "/profile" }),
         ].map((item, index) => (
-          <NavBarItem
+          item && <NavBarItem
             key={item.name + index}
             title={item.name}
             link={item.link}
@@ -66,12 +66,12 @@ const Navbar = () => {
             Logout
           </li>
         ) : (
-          <li
+          <button
             onClick={() => signIn("google")}
             className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
           >
             Login
-          </li>
+          </button>
         )}
       </ul>
       <div className="flex relative">
@@ -93,9 +93,9 @@ const Navbar = () => {
             {[
               { name: "Events", link: "/events" },
               { name: "Spandan", link: "/spandan" },
-              { name: "Profile", link: "/profile" },
+              status == "authenticated" && ({ name: "Profile", link: "/profile" }),
             ].map((item, index) => (
-              <NavBarItem
+              item && <NavBarItem
                 key={item.name + index}
                 title={item.name}
                 classprops="my-2 text-lg"
@@ -113,13 +113,13 @@ const Navbar = () => {
                 Logout
               </li>
             ) : (
-              <li
+              <button
                 key="yolo"
                 onClick={() => signIn("google")}
                 className="mx-4 cursor-pointer my-2 text-lg"
               >
                 Login
-              </li>
+              </button>
             )}
           </ul>
         )}
