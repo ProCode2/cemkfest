@@ -13,10 +13,11 @@ const handler = async (req, res) => {
     } else if (req.method == "POST") {
       const session = await getServerSession(req, res, authOptions);
       console.log(session);
-      // if (!checkAdminAccess(session)) {
-      //   res.status(403).end();
-      //   return;
-      // }
+      if (!checkAdminAccess(session)) {
+        res.status(403).end();
+        return;
+      }
+      console.log(req.body);
       const {
         name,
         description,
@@ -26,7 +27,7 @@ const handler = async (req, res) => {
         rules,
         coordinators,
         tagline,
-      } = req.body;
+      } = JSON.parse(req.body);
       const id = await addEvent(
         name,
         description,

@@ -39,6 +39,14 @@ export const unregisterFromEvent = async (eid) => {
   return response;
 };
 
+export const addEvent = async (event) => {
+  const response = await fetch(`/api/events`, {
+    method: "POST",
+    body: JSON.stringify(event),
+  });
+  return response;
+};
+
 export const updateEvent = async (eid, event) => {
   const response = await fetch(`/api/events/all/${eid}`, {
     method: "PUT",
