@@ -1,4 +1,4 @@
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 import {
   userRegisterInEvent,
   userUnregisterFromEvent,
@@ -9,7 +9,7 @@ import { authOptions } from "../../auth/[...nextauth]";
 const handler = async (req, res) => {
   const { eid } = req.query;
 
-  const session = await unstable_getServerSession(req, res, authOptions);
+  const session = await getServerSession(req, res, authOptions);
   if (!checkUserLoggedIn(session)) {
     return res.status(403).end();
   }
