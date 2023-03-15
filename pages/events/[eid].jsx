@@ -93,7 +93,7 @@ const SingleEventPage = () => {
                       .then((res) => {
                         setLoading(false);
                         if (res.ok) {
-                          alert("Registered successfully");
+                          window.location.href="/profile";
                         } else {
                           alert("Please try again");
                         }

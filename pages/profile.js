@@ -12,7 +12,8 @@ const ProfilePage = () => {
   const { data: session, status } = useSession();
 
   useEffect(() => {
-    if (status === "authenticated") {
+    if (status === "loading") return;
+    else if (status === "authenticated") {
       setLoading(true);
       getProfileData()
         .then((p) => {

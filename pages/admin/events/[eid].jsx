@@ -165,7 +165,6 @@ const EditEventPage = () => {
                   </span>
                   <span className="">
                     <select
-                      defaultValue="Robotics"
                       name="category"
                       id="category"
                       className="appearance-none blue-glassmorphism px-3 py-2 my-2 mx-3"
@@ -186,7 +185,7 @@ const EditEventPage = () => {
                         "BrainGames",
                         "SpeakUp",
                       ].map((cat) => (
-                        <option key={cat} value={cat}>
+                        <option className="bg-slate-700" selected={cat === event?.category } key={cat} value={cat}>
                           {cat}
                         </option>
                       ))}

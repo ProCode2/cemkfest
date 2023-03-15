@@ -81,7 +81,7 @@ export const getUserRegisteredEvents = async (uid) => {
       let events = [];
       Object.keys(userData.participation).forEach(async (eid) => {
         const event = await getEventById(eid);
-        events.push(event);
+        if (event) events.push(event);
       });
       return events;
     }

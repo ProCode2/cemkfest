@@ -73,7 +73,7 @@ export const updateEventById = async (
 export const getEventById = async (eid) => {
   const doc = await db.collection("events").doc(eid).get();
   if (!doc.exists) {
-    return {};
+    return undefined;
   } else {
     return { id: doc.id, ...doc.data() };
   }
