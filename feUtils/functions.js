@@ -1,6 +1,6 @@
 export const checkAdminAccess = async () => {
   const response = await fetch("/api/auth/admin");
-  if (response.status !== 200) window.location.href = "/";
+  return response;
 };
 
 export const getProfileData = async () => {
@@ -51,6 +51,13 @@ export const updateEvent = async (eid, event) => {
   const response = await fetch(`/api/events/all/${eid}`, {
     method: "PUT",
     body: JSON.stringify(event),
+  });
+  return response;
+};
+
+export const deleteEvent = async (eid) => {
+  const response = await fetch(`/api/events/all/${eid}`, {
+    method: "DELETE",
   });
   return response;
 };

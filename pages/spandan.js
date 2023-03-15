@@ -59,10 +59,10 @@ const SpandanPage = () => {
           <div className="max-w-2xl rounded-md shadow-md mx-atuo m-2 mt-12 p-4 text-center mb-0">
             <Image src={SLogo} alt="Spandan 2K23" />
             <p className="text-sm md:text-base text-slate-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis quam sint nisi repellendus totam libero ex vel? Eum
-              maxime facilis quis quisquam possimus sit dolorem nobis asperiores
-              libero quidem. Natus!
+              We want you to witness this once in a lifetime event
+              wholeheartedly. We are planning to enrich Spandan 2023 with Dance,
+              Drama, and of course, heartwarming musical events by famous
+              artists.
             </p>
           </div>
           <TimeLine />

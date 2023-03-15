@@ -64,7 +64,7 @@ const EventsList = ({ eventUrlPrefix }) => {
             <EventItem
               key={e.id}
               eventName={e.name}
-              link={`/events/${e.id}`}
+              link={`${eventUrlPrefix}/${e.id}`}
               description={e.description}
             />
           ))}

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import {
   checkAdminAccess,
+  deleteEvent,
   getEvent,
   updateEvent,
 } from "../../../feUtils/functions";
@@ -45,7 +46,7 @@ const EditEventPage = () => {
       .then((res) => {
         console.log(res);
         if (res.ok)
-          alert("Updated");
+          window.location.href = "/admin/events";
         else
           alert("Something went wrong, Please try again.")
         setLoading(false);
@@ -56,6 +57,24 @@ const EditEventPage = () => {
         setLoading(false);
       });
   };
+
+  const handleDelete = () => {
+    setLoading(true);
+    deleteEvent(eid)
+    .then(res => {
+      console.log(res);
+      if (res.ok)
+          window.location.href = "/admin/events";
+        else
+          alert("Something went wrong, Please try again.")
+        setLoading(false);
+    })
+    .catch((e) => {
+      console.log(e);
+      alert("Something went wrong, Please try again.");
+      setLoading(false);
+    });
+  }
 
   return (
     <section className="bg-gradient-1 w-full h-full min-h-screen py-28 flex items-center justify-start flex-col px-2">
@@ -94,21 +113,25 @@ const EditEventPage = () => {
             </div>
             <div className="w-full md:max-w-5xl p-2 flex justify-end items-center">
               <button
-                className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] ml-auto"
+                className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
                 onClick={handleUpdate}
               >
                 Update
               </button>
+              
+              <button onClick={handleDelete} className="block bg-red-600 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-red-900">
+                Delete
+              </button>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 py-2 rounded-md shadow-md blue-glassmorphism flex justify-between items-center">
-              <div className="text-sm font-mono  text-slate-600 mx-4">
+              <div className="text-sm font-mono  text-gray-400 mx-4">
                 <p className="">
                   <span className="font-bold text-base text-white">
                     Date, Time:
                   </span>
                   <span className="">
                     <input
-                      className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
+                      className="text-sm font-mono  text-gray-400 mt-3 bg-transparent border rounded-md pl-2 py-2"
                       placeholder="Eg: 04/04/23 3:30 PM"
                       value={event?.time}
                       onChange={(e) =>
@@ -124,7 +147,7 @@ const EditEventPage = () => {
                   <span className="font-bold text-base text-white">Venue</span>
                   <span className="">
                     <input
-                      className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
+                      className="text-sm font-mono  text-gray-400 mt-3 bg-transparent border rounded-md pl-2 py-2"
                       placeholder="Eg: S203"
                       value={event?.venue}
                       onChange={(e) =>
@@ -177,7 +200,7 @@ const EditEventPage = () => {
                 Description
               </h3>
               <textarea
-                className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2 w-full"
+                className="text-sm font-mono  text-gray-400 mt-3 bg-transparent border rounded-md pl-2 py-2 w-full"
                 placeholder="Description"
                 value={event?.description}
                 onChange={(e) =>
@@ -193,7 +216,7 @@ const EditEventPage = () => {
                 Rules
               </h3>
               <textarea
-                className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2 w-full"
+                className="text-sm font-mono  text-gray-400 mt-3 bg-transparent border rounded-md pl-2 py-2 w-full"
                 placeholder="Rules"
                 value={event?.rules}
                 onChange={(e) =>
@@ -224,7 +247,7 @@ const EditEventPage = () => {
                   Add
                 </button>
               </div>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
+              <div className="text-sm font-mono  text-gray-400 mt-3">
                 {Object.entries(event?.coordinators || {}).map(
                   ([key, value]) => (
                     <div
@@ -233,7 +256,7 @@ const EditEventPage = () => {
                     >
                       <input
                         type="text"
-                        className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
+                        className="text-sm font-mono  text-gray-400 mt-3 bg-transparent border rounded-md pl-2 py-2"
                         placeholder="Enter Name"
                         value={value.name}
                         onChange={(e) => {
@@ -251,7 +274,7 @@ const EditEventPage = () => {
                       />
                       <input
                         type="number"
-                        className="text-sm font-mono  text-slate-600 mt-3 bg-transparent border rounded-md pl-2 py-2"
+                        className="text-sm font-mono  text-gray-400 mt-3 bg-transparent border rounded-md pl-2 py-2"
                         placeholder="Enter number"
                         value={value.phone}
                         onChange={(e) => {

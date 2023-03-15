@@ -58,7 +58,7 @@ const SingleEventPage = () => {
               </div>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 py-2 rounded-md shadow-md blue-glassmorphism flex justify-between items-center">
-              <div className="text-sm font-mono  text-slate-600 mx-4">
+              <div className="text-sm font-mono  text-gray-400 mx-4">
                 <p className="">
                   <span className="font-bold text-base text-white">Date: </span>
                   <span className="">
@@ -76,6 +76,12 @@ const SingleEventPage = () => {
                     Venue:{" "}
                   </span>
                   <span className="">{event?.venue}</span>
+                </p>
+                <p className="">
+                  <span className="font-bold text-base text-white">
+                    Category:{" "}
+                  </span>
+                  <span className="">{event?.category}</span>
                 </p>
               </div>
               {status === "authenticated" &&
@@ -106,7 +112,7 @@ const SingleEventPage = () => {
               <h3 className="font-bold text-xl text-white tracking-wider uppercase">
                 Description
               </h3>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
+              <div className="text-sm font-mono  text-gray-400 mt-3">
                 {event?.description}
               </div>
             </div>
@@ -114,15 +120,15 @@ const SingleEventPage = () => {
               <h3 className="font-bold text-xl text-white tracking-wider uppercase">
                 Rules
               </h3>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
+              <pre className="text-sm font-mono  text-gray-400 mt-3 whitespace-pre-wrap break-after-all">
                 {`${event?.rules}`}
-              </div>
+              </pre>
             </div>
             <div className="w-full md:max-w-5xl mx-2 my-4 p-4 rounded-md shadow-md blue-glassmorphism flex flex-col justify-center items-start">
               <h3 className="font-bold text-xl text-white tracking-wider uppercase">
                 Coordinators
               </h3>
-              <div className="text-sm font-mono  text-slate-600 mt-3">
+              <div className="text-sm font-mono  text-gray-400 mt-3">
                 <ul>
                   {Object.values(event?.coordinators || {}).map((co) => (
                     <li key={co?.phone}>

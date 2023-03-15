@@ -17,12 +17,14 @@ const NavBarItem = ({ title, classprops, link }) => {
   );
 };
 
-const Navbar = () => {
+const Navbar = ({admin}) => {
   // console.log(teamRef);
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [updateNavColor, setUpdateNavColor] = useState(false);
   const { data: session, status } = useSession();
   const scrollPos = useScrollPosition();
+
+
 
   useEffect(() => {
     if (scrollPos > 100) {
@@ -49,6 +51,7 @@ const Navbar = () => {
           { name: "Events", link: "/events" },
           { name: "Spandan", link: "/spandan" },
           status == "authenticated" && ({ name: "Profile", link: "/profile" }),
+          admin && ({ name: "Admin", link: "/admin/events" })
         ].map((item, index) => (
           item && <NavBarItem
             key={item.name + index}
@@ -94,6 +97,7 @@ const Navbar = () => {
               { name: "Events", link: "/events" },
               { name: "Spandan", link: "/spandan" },
               status == "authenticated" && ({ name: "Profile", link: "/profile" }),
+              admin && ({ name: "Admin", link: "/admin/events" })
             ].map((item, index) => (
               item && <NavBarItem
                 key={item.name + index}
