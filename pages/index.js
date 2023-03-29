@@ -27,7 +27,7 @@ export default function Home() {
         <Image
           src={ResonanceLong}
           alt="Resonance XII"
-          className="absolute top-0 bottom-0 my-auto left-0 right-0 mx-auto drop-shadow-xl z-10 w-88 md:w-1/2"
+          className="absolute bottom-12 left-0 right-0 mx-auto drop-shadow-xl z-10 w-88 md:w-1/2"
         />
       </section>
       <section className="bg-gradient w-full flex flex-col justify-center items-center pb-8 overflow-hidden">

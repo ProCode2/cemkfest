@@ -16,22 +16,10 @@
 
 .bg-gradient {
   background-color: #14191f;
-  background: radial-gradient(
-    circle farthest-corner at bottom left,
-    #49668c 0%,
-    #14191f 20%,
-    #14191f 100%
-  );
 }
 
 .bg-gradient-1 {
   background-color: #14191f;
-  background: radial-gradient(
-    circle farthest-corner at top right,
-    #49668c 0%,
-    #14191f 30%,
-    #14191f 100%
-  );
 }
 
 .bg-gradient-2 {

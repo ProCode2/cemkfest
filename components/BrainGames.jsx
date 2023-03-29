@@ -4,6 +4,7 @@ import { Model } from "./Brain";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Button from "./Button";
 import Link from "next/link";
+import CanvasLoader from "./CanvasLoader";
 
 const BrainGames = () => {
   return (
@@ -15,7 +16,7 @@ const BrainGames = () => {
           flat
           linear
         >
-          <Suspense fallback={null}>
+          <Suspense fallback={<CanvasLoader />}>
             <OrbitControls enableZoom={false} />
             <Stage preset="portrait" environment="sunset">
               <ambientLight intensity={1} position={[1, 5, 10]} />

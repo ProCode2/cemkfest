@@ -15,11 +15,10 @@ import Image3 from "../public/images/gallery/3.webp";
 import Image4 from "../public/images/gallery/4.webp";
 import Image5 from "../public/images/gallery/5.webp";
 import Image6 from "../public/images/gallery/6.webp";
-import Image7 from "../public/images/gallery/7.webp";
-import Image8 from "../public/images/gallery/8.webp";
+import Riddles from "../public/images/gallery/riddles.webp";
 
 //Array of Images
-const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8];
+const images = [Image1, Image2, Image3, Image4, Image5, Image6];
 
 const SpandanPage = () => {
   const songs = [
@@ -54,17 +53,18 @@ const SpandanPage = () => {
   }, []);
   return (
     <>
+      <section className="w-full min-h-screen flex-col relative">
+        <video
+          className="absolute top-0 left-0 z-0 w-full h-full object-fill md:object-cover"
+          src="/images/gallery/sbg.mp4"
+          autoPlay={true}
+          muted={true}
+          loop={true}
+        ></video>
+        <div className="hero-section-overlay absolute top-0 left-0 w-full h-full z-10"></div>
+      </section>
       <div className="w-full min-h-screen pt-32 bg-gradient">
         <div className="max-w-5xl bg-transparent mx-auto flex flex-col justify-start items-center">
-          <div className="max-w-2xl rounded-md shadow-md mx-atuo m-2 mt-12 p-4 text-center mb-0">
-            <Image src={SLogo} alt="Spandan 2K23" />
-            <p className="text-sm md:text-base text-slate-300">
-              We want you to witness this once in a lifetime event
-              wholeheartedly. We are planning to enrich Spandan 2023 with Dance,
-              Drama, and of course, heartwarming musical events by famous
-              artists.
-            </p>
-          </div>
           <TimeLine />
         </div>
         {/* <div className="hidden md:block max-w-4xl md:h-[800px] bg-transparent p-6 mx-auto">
@@ -100,7 +100,7 @@ const SpandanPage = () => {
           <SpandanGallery />
         </div>
         {/* fixed bottom-10 right-10 p-4 rounded-md shadow-md text-sm text-slate-900 bg-slate-100 */}
-        <div className="fixed bottom-3 right-3 md:bottom-8 md:right-8 p-4 rounded-md shadow-md max-w-max">
+        <div className="fixed bottom-3 right-3 md:bottom-8 md:right-8 p-4 rounded-md shadow-md max-w-max z-30">
           <span className="relative flex h-12 w-40">
             <span
               className={`absolute inline-flex h-full w-full rounded-md bg-sky-400 opacity-75 justify-center items-center ${
@@ -146,14 +146,17 @@ const SpandanPage = () => {
             className="w-full flex flex-col md:flex-row my-12 overflow-hidden rounded-md shadow-md"
           >
             <div className="flex-1">
-              <Image src={Image2} alt="Ashes" />
+              {/* <Image src={Image2} alt="Ashes" /> */}
+              <p className="w-44 h-80 text-gradient text-xl font-bold flex justify-center items-center rounded-md shadow-md">
+                Official poster coming soon!
+              </p>
             </div>
 
             <div className="flex-1 flex flex-col justify-center items-center p-6">
               <h1 className="text-gradient font-bold text-2xl md:text-6xl tracking-wide text-center mb-4">
                 Ashes
               </h1>
-              <Link href="#">
+              <Link href="https://www.youtube.com/@AshesBangladesh">
                 <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
                   Check Out
                 </button>
@@ -173,16 +176,16 @@ const SpandanPage = () => {
           >
             <div className="flex-1 flex flex-col justify-center items-center p-6">
               <h1 className="text-gradient font-bold text-2xl md:text-6xl tracking-wide text-center mb-4">
-                Ashes
+                Riddles @ 7th April
               </h1>
-              <Link href="#">
+              <Link href="https://www.youtube.com/@RiddlesTheBand">
                 <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
                   Check Out
                 </button>
               </Link>
             </div>
             <div className="flex-1">
-              <Image src={Image2} alt="Ashes" />
+              <Image src={Riddles} alt="Riddles" />
             </div>
           </motion.div>
         </div>
