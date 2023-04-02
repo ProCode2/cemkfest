@@ -51,8 +51,9 @@ const Slideshow = () => {
         {images.map((each, index) => (
           <div key={index} className="flex justify-center w-full h-full">
             <Image
-              className="w-3/4 object-cover rounded-lg shadow-xl"
+              className="w-full max-w-2xl mx-3 object-contain rounded-md shadow-xl"
               src={each}
+              alt="Spandan"
             />
           </div>
         ))}

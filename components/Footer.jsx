@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
 import Logo from "../public/images/long_logo_slim.webp";
 
@@ -8,7 +9,7 @@ const Footer = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer">
     <div className="sm:w-[90%] flex sm:flex-row flex-col justify-between items-center my-4">
       <div className="flex justify-center items-center">
-        <Image src={Logo} width={250} />
+        <Image src={Logo} width={250} alt="Resonance" />
       </div>
       <div className="flex justify-end items-center flex-wrap sm:mt-0 mt-5 w-full">
         {/* <p className="text-white text-base text-center mx-2 cursor-pointer">
@@ -24,6 +25,26 @@ const Footer = () => (
           Contact
         </p></Link>
       </div>
+    </div>
+    <div className="flex flex-wrap sm:w-[90%] justify-start items-center space-x-6">
+    <Link target="_blank" href="https://www.facebook.com/resoXIInance23">
+            <span>
+              <AiFillFacebook fontSize={40} className="hover:text-slate-300" />
+            </span>
+          </Link>
+          <Link target="_blank" href="https://www.facebook.com/span23dan">
+            <span>
+              <AiFillFacebook fontSize={40} className="hover:text-slate-300" />
+            </span>
+          </Link>
+          <Link
+            target="_blank"
+            href="https://www.instagram.com/cemkfest_official/"
+          >
+            <span>
+              <AiFillInstagram fontSize={40} className="hover:text-slate-300" />
+            </span>
+          </Link>
     </div>
 
     <div className="flex justify-center items-center flex-col mt-5">

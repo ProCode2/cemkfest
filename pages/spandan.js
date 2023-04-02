@@ -16,6 +16,7 @@ import Image4 from "../public/images/gallery/4.webp";
 import Image5 from "../public/images/gallery/5.webp";
 import Image6 from "../public/images/gallery/6.webp";
 import Riddles from "../public/images/gallery/riddles.webp";
+import Ashes from "../public/images/gallery/ashes.webp";
 
 //Array of Images
 const images = [Image1, Image2, Image3, Image4, Image5, Image6];
@@ -50,12 +51,12 @@ const SpandanPage = () => {
 
   useEffect(() => {
     playAudio();
-  }, []);
+  }, [playAudio]);
   return (
     <>
-      <section className="w-full min-h-screen flex-col relative">
+      <section className="w-full h-[300px] md:h-[500px] lg:min-h-screen flex-col relative">
         <video
-          className="absolute top-0 left-0 z-0 w-full h-full object-fill md:object-cover"
+          className="absolute top-0 left-0 z-0 w-full h-full object-cover md:object-cover"
           src="/images/gallery/sbg.mp4"
           autoPlay={true}
           muted={true}
@@ -63,7 +64,7 @@ const SpandanPage = () => {
         ></video>
         <div className="hero-section-overlay absolute top-0 left-0 w-full h-full z-10"></div>
       </section>
-      <div className="w-full min-h-screen pt-32 bg-gradient">
+      <div className="w-full min-h-screen bg-gradient">
         <div className="max-w-5xl bg-transparent mx-auto flex flex-col justify-start items-center">
           <TimeLine />
         </div>
@@ -145,22 +146,18 @@ const SpandanPage = () => {
             }}
             className="w-full flex flex-col md:flex-row my-12 overflow-hidden rounded-md shadow-md"
           >
-            <div className="flex-1">
-              {/* <Image src={Image2} alt="Ashes" /> */}
-              <p className="w-44 h-80 text-gradient text-xl font-bold flex justify-center items-center rounded-md shadow-md">
-                Official poster coming soon!
-              </p>
-            </div>
-
             <div className="flex-1 flex flex-col justify-center items-center p-6">
               <h1 className="text-gradient font-bold text-2xl md:text-6xl tracking-wide text-center mb-4">
-                Ashes
+                Riddles @ 7th April
               </h1>
-              <Link href="https://www.youtube.com/@AshesBangladesh">
+              <Link href="https://www.youtube.com/@RiddlesTheBand">
                 <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
                   Check Out
                 </button>
               </Link>
+            </div>
+            <div className="flex-1">
+              <Image src={Riddles} alt="Riddles" />
             </div>
           </motion.div>
           <motion.div
@@ -174,18 +171,19 @@ const SpandanPage = () => {
             }}
             className="w-full flex flex-col md:flex-row my-12 overflow-hidden rounded-md shadow-md"
           >
+            <div className="flex-1">
+              <Image src={Ashes} alt="Ashes" />
+            </div>
+
             <div className="flex-1 flex flex-col justify-center items-center p-6">
               <h1 className="text-gradient font-bold text-2xl md:text-6xl tracking-wide text-center mb-4">
-                Riddles @ 7th April
+                Ashes @ 8th April
               </h1>
-              <Link href="https://www.youtube.com/@RiddlesTheBand">
+              <Link href="https://www.youtube.com/@AshesBangladesh">
                 <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
                   Check Out
                 </button>
               </Link>
-            </div>
-            <div className="flex-1">
-              <Image src={Riddles} alt="Riddles" />
             </div>
           </motion.div>
         </div>

@@ -27,7 +27,7 @@ const ProfilePage = () => {
     } else {
       window.location.href = "/";
     }
-  }, []);
+  }, [status]);
   return (
     <>
       <section className="bg-gradient-1 w-full h-full py-28 flex items-center justify-start flex-col min-h-screen">
@@ -77,7 +77,6 @@ const ProfilePage = () => {
                               .then((res) => {
                                 if (res.statusText == "OK") {
                                   setLoading(false);
-                                  window.location.href = "/profile";
                                   alert("Successfully Unregistered.");
                                 } else {
                                   setLoading(false);
