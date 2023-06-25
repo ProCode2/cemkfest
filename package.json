@@ -11,7 +11,7 @@
   "dependencies": {
     "@next-auth/firebase-adapter": "^1.0.3",
     "@next/font": "13.0.7",
-    "@react-three/drei": "^9.48.6",
+    "@react-three/drei": "^9.77.3",
     "@react-three/fiber": "^8.9.2",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
